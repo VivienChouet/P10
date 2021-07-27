@@ -21,7 +21,7 @@ public class ReservationController {
     @Autowired
     ReservationService reservationService;
 
-
+    @Autowired
     ReservationMapper reservationMapper;
 
     @GetMapping("/")

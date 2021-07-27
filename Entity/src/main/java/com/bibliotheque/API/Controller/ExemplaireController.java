@@ -21,7 +21,7 @@ public class ExemplaireController {
     @Autowired
     ExemplaireService exemplaireService;
 
-
+    @Autowired
     ExemplaireMapper exemplaireMapper;
 
 

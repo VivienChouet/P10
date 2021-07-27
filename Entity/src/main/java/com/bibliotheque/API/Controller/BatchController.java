@@ -26,6 +26,7 @@ public class BatchController {
     @Autowired
     ReservationService reservationService;
 
+    @Autowired
     ReservationMapper reservationMapper;
 
     @GetMapping("/")

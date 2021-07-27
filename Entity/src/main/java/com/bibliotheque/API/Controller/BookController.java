@@ -20,22 +20,25 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-
+    @Autowired
     BookMapper bookMapper;
 
 
     @RequestMapping("/")
     public ResponseEntity <List<BookDTO>>listOfBooks() {
         List<Book> books = this.bookService.findAll();
+        System.out.println(books);
         return new ResponseEntity<>(bookMapper.toDto(books), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<BookDTO> bookId(@PathVariable int id) {
         Book book = this.bookService.findById(id);
+        System.out.println(book.title);
         if (book == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+        System.out.println("Mapper = " + bookMapper.toDto(book));
         return new ResponseEntity<>(bookMapper.toDto(book), HttpStatus.OK);
     }
 
