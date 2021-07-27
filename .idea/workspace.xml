@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="" />
+    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="First Commit / push" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +16,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="c70818fb-48a5-4586-b5b1-76f5fba4ed01" />
   </component>
   <component name="ProjectId" id="1vtVPJDf2tjvHR9JrWs3NB9dnzt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -40,7 +43,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -98,8 +101,16 @@
       <updated>1627381348294</updated>
       <workItem from="1627381349592" duration="836000" />
       <workItem from="1627382220097" duration="65000" />
-      <workItem from="1627382288858" duration="1184000" />
+      <workItem from="1627382288858" duration="1356000" />
     </task>
+    <task id="LOCAL-00001" summary="First Commit / push">
+      <created>1627383616785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1627383616785</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,5 +145,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
+    <MESSAGE value="First Commit / push" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit / push" />
   </component>
 </project>
