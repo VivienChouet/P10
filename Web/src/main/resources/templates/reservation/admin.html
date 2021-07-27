@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragment/block :: headerFragment"></head>
+
+<header th:insert="fragment/header :: header(barnav)"></header>
+
+<div class="row">
+    <div class="container col-10">
+        <div class="card" style="margin-top: 20px; margin-left: auto; margin-right: auto ; padding: 0">
+            <div class="card-header">
+                <h1> Liste des réservations en cours</h1>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thread>
+                        <tr>
+                            <th scope="col">book</th>
+                            <th scope="col">user</th>
+                            <th scope="col">exemplaire</th>
+                            <th scope="col">date de début</th>
+                            <th scope="col">date de fin</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                    <tr th:each="reservation : ${reservations}">
+                        <td th:text="${reservation.exemplaire.book.title}"></td>
+                        <td th:text="${reservation.user.name}"></td>
+                        <td th:text="${reservation.exemplaire.edition}"></td>
+                        <td th:text="${reservation.date_debut}"></td>
+                        <td th:text="${reservation.date_fin}"></td>
+                        <td th:if="${reservation.extension} == false">
+                            <form method="post" th:action="@{/reservation/end/{id}(id=${reservation.id})}">
+                                <button class="btn btn-primary btn-block btn-flat" type="submit">Rendu
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer th:insert="fragment/footer :: footer"></footer>
+</html>

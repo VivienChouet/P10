@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragment/block :: headerFragment"></head>
+
+<header th:insert="fragment/header :: header(barnav)"></header>
+
+<div class="row">
+    <div class="container col-10">
+        <div class="card" style="margin-top: 20px; margin-left: auto; margin-right: auto ; padding: 0">
+            <div class="card-header">
+                <h1> Liste des réservations en cours</h1>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thread>
+                        <tr>
+                            <th scope="col">user</th>
+                            <th scope="col">email</th>
+
+                        </tr>
+                    </thread>
+                    <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td th:if="${user.admin} == false">
+                            <form method="post" th:action="@{/admin/newadmin/{id}(id=${user.id})}">
+                                <button class="btn btn-primary btn-block btn-flat" type="submit">Admin
+                                </button>
+                            </form>
+                        </td>
+                        <td th:if="${user.admin} == true">
+                            <form method="post" th:action="@{/admin/removeadmin/{id}(id=${user.id})}">
+                                <button class="btn btn-primary btn-block btn-flat" type="submit">retirer Admin
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<footer th:insert="fragment/footer :: footer"></footer>
+</html>
