@@ -5,7 +5,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="First Commit / push">
+      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Batch/lib/spring-batch-core-2.2.6.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Batch/lib/spring-batch-infrastructure-2.2.6.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/META-INF/application.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_1_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_14_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_18_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_3_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_processor_1_3_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_6_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_6_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_12_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_27.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/EntityApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/EntityApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +92,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1vtVPJDf2tjvHR9JrWs3NB9dnzt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -34,15 +111,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Batch" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -100,7 +178,9 @@
       <updated>1627381348294</updated>
       <workItem from="1627381349592" duration="836000" />
       <workItem from="1627382220097" duration="65000" />
-      <workItem from="1627382288858" duration="3131000" />
+      <workItem from="1627382288858" duration="4508000" />
+      <workItem from="1627386910477" duration="3272000" />
+      <workItem from="1627397524897" duration="2870000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit / push">
       <created>1627383616785</created>
@@ -130,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627384500700</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="First Commit / push">
+      <created>1627385561506</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1627385561506</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,5 +254,9 @@
     </ignored-roots>
     <MESSAGE value="First Commit / push" />
     <option name="LAST_COMMIT_MESSAGE" value="First Commit / push" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

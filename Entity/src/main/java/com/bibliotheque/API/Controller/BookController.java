@@ -20,7 +20,7 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-    @Autowired
+
     BookMapper bookMapper;
 
 
