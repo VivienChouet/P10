@@ -1,6 +1,8 @@
 package com.bibliotheque.Web.service;
 
-import com.bibliotheque.Web.Entity.Dto.*;
+import com.bibliotheque.Web.Entity.Dto.ReservationDTO;
+import com.bibliotheque.Web.Entity.Dto.ReservationResearchDTO;
+import com.bibliotheque.Web.Entity.Dto.UserDTO;
 import com.bibliotheque.Web.utility.LoggingController;
 import com.bibliotheque.Web.utility.OperateurDiamant;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -10,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.net.http.HttpResponse;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -32,24 +33,15 @@ public class ReservationService {
      */
     public void newReservation(String edition, Integer bookId) throws JsonProcessingException {
         UserDTO userDTO = userService.connectedUser();
-        System.out.println("edition reserver = " + edition);
-        System.out.println("bookid = " + bookId);
         ReservationResearchDTO reservationResearchDTO = new ReservationResearchDTO();
         reservationResearchDTO.setEdition(edition);
         reservationResearchDTO.setId(bookId);
+        reservationResearchDTO.setUser(userDTO.getId());
         String json = (String) operateurDiamant.jsonConvert(reservationResearchDTO);
-        HttpResponse response = operateurDiamant.post("http://localhost:8080/exemplaire/edition", json);
-        List<ExemplaireDTO> exemplaireDTOS = (List<ExemplaireDTO>) operateurDiamant.listObject(response, ExemplaireDTO.class);
-        NewReservationDTO newreservationDTO = new NewReservationDTO();
-        int idUser = userDTO.getId();
-        newreservationDTO.setIduser(idUser);
-        newreservationDTO.setIdexemplaire(exemplaireDTOS.get(0).id);
-        newreservationDTO.setDate_debut(new Date());
-        newreservationDTO.setDate_fin(new Date());
-        String json1 = (String) operateurDiamant.jsonConvert(newreservationDTO);
-        operateurDiamant.post("http://localhost:8080/reservation/", json1);
-    }
+        operateurDiamant.post("http://localhost:8080/reservation/", json);
+        logger.info("New Reservation :  " + reservationResearchDTO);
 
+    }
     /**
      * List Reservation By User
      * @return List<ReservationDTO>

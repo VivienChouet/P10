@@ -2,6 +2,7 @@ package com.bibliotheque.API.Controller;
 
 
 
+import com.bibliotheque.API.Entity.Dto.DeleteReservationDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Entity.Dto.ReservationDTO;
 import com.bibliotheque.API.Entity.Mapper.ReservationMapper;
@@ -42,14 +43,13 @@ public class ReservationController {
 
     @PostMapping("/")
     public ResponseEntity<ReservationDTO> newReservation (@RequestBody NewReservationDTO newReservationDTO) {
-        System.out.println("reservation id => " + newReservationDTO.id);
+        System.out.println("New Reservation Controller UP");
         reservationService.save(newReservationDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PutMapping("/")
     public ResponseEntity<ReservationDTO> updateReservation (@RequestBody NewReservationDTO newReservationDTO) {
-
         if(newReservationDTO == null )
         {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -59,8 +59,8 @@ public class ReservationController {
     }
 
     @DeleteMapping("/")
-    public ResponseEntity<ReservationDTO> deleteReservation (@RequestBody NewReservationDTO newReservationDTO){
-        reservationService.delete(newReservationDTO.getId());
+    public ResponseEntity<ReservationDTO> deleteReservation (@RequestBody DeleteReservationDTO deleteReservationDTO){
+        reservationService.delete(deleteReservationDTO.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

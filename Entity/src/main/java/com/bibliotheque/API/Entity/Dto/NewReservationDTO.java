@@ -8,11 +8,9 @@ import java.util.Date;
 public class NewReservationDTO {
 
     public int id;
-    public Date date_debut;
-    public Date date_fin;
+    public String edition;
+    public int user;
 
-    public int iduser;
-    public int idexemplaire;
 
 }
 

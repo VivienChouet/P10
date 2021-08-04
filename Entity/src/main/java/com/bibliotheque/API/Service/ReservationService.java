@@ -71,18 +71,19 @@ public class ReservationService {
     public void save(NewReservationDTO newReservationDTO) {
         logger.info("new reservation = " + newReservationDTO);
         Reservation reservation = new Reservation();
-        reservation.setDate_debut(newReservationDTO.date_debut);
-        reservation.setDate_fin(endReservationDate(newReservationDTO.date_debut));
-        reservation.setExemplaire(exemplaireRepository.findById(newReservationDTO.idexemplaire));
-        reservation.setUser(userRepository.findById(newReservationDTO.iduser).get());
+        reservation.setDate_debut(new Date());
+        reservation.setDate_fin(endReservationDate(new Date()));
+        Exemplaire exemplaire = this.exemplaireRepository.findByBook_IdAndEditionAndAvailable(newReservationDTO.id, newReservationDTO.edition, true).get(0);
+        reservation.setExemplaire(exemplaire);
+        reservation.setUser(userRepository.findById(newReservationDTO.user).get());
         reservation.setEnded(false);
         reservation.setExtension(false);
         reservationRepository.save(reservation);
-        Exemplaire exemplaire = this.exemplaireRepository.findById(newReservationDTO.getIdexemplaire());
         exemplaire.setAvailable(false);
         logger.info("exemplaire = " + exemplaire.edition);
         exemplaireRepository.save(exemplaire);
     }
+
 
     /**
      * Reservation End Date

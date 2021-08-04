@@ -21,4 +21,6 @@ public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer>
     List<Exemplaire> findByBook_id(int id);
 
     List<Exemplaire> findByBook_idAndEdition(int book_id, String edition);
+
+    List<Exemplaire> findByBook_IdAndEditionAndAvailable(int idExemplaire, String edition, boolean b);
 }

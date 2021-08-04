@@ -4,34 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="Mise en place de la classe Attente &#10;Ajout column number dans exemplaire">
-      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-07-27.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-07-31.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_14_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20210307.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/AttenteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireCountDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Mapper/AttenteMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" afterDir="false" />
+    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="- Supression du Bug de reservation et traitement ramener sur le Back">
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/DeleteReservationDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" beforeDir="false" afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_10_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_10_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_21.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_25.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160810.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_4_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_4_2_Final.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/EntityApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/EntityApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ExemplaireDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ExemplaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ReservationResearchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ReservationResearchDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ReservationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +140,7 @@
       <workItem from="1627733794127" duration="6102000" />
       <workItem from="1627913183381" duration="7314000" />
       <workItem from="1627994996879" duration="3683000" />
+      <workItem from="1628085506640" duration="4899000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit / push">
       <created>1627383616785</created>
@@ -213,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627407232988</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- Ajout de la methode permettant d'avoir la date du prochain retour.&#10;Bug de réservation : &#10;- Si il y a 2 ou plus d'exemplaires d'une même edition la reservation se fait uniquement sur la premiere entrée et cela ajoute plusieurs fois la même reservation d'un exemplairId unique.">
+      <created>1628086041905</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1628086041905</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +244,9 @@
     <MESSAGE value="DEBUG : Lombok Does not work with IntelliJ EAP 2020.3" />
     <MESSAGE value="DEBUG : IntelliJ 2021.2 resolve problem with Lombok" />
     <MESSAGE value="Mise en place de la classe Attente &#10;Ajout column number dans exemplaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise en place de la classe Attente &#10;Ajout column number dans exemplaire" />
+    <MESSAGE value="- Ajout de la methode permettant d'avoir la date du prochain retour.&#10;Bug de réservation : &#10;- Si il y a 2 ou plus d'exemplaires d'une même edition la reservation se fait uniquement sur la premiere entrée et cela ajoute plusieurs fois la même reservation d'un exemplairId unique." />
+    <MESSAGE value="- Supression du Bug de reservation et traitement ramener sur le Back" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Supression du Bug de reservation et traitement ramener sur le Back" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

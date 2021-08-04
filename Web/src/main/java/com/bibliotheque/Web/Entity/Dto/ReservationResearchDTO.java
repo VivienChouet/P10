@@ -7,5 +7,6 @@ public class ReservationResearchDTO {
 
    public Integer id;
    public String edition;
+   public int user;
 
 }
