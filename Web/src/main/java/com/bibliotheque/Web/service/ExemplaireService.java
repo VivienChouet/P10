@@ -1,13 +1,13 @@
 package com.bibliotheque.Web.service;
 
-import com.bibliotheque.Web.Entity.Dto.ExemplaireDTO;
+
 import com.bibliotheque.Web.Entity.Dto.NewExemplaireDTO;
 import com.bibliotheque.Web.Entity.Dto.NumberExemplaireDTO;
 import com.bibliotheque.Web.utility.OperateurDiamant;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.bibliotheque.Web.Entity.Dto.*;
 import java.net.http.HttpResponse;
 import java.util.*;
 

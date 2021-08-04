@@ -80,4 +80,11 @@ public class ExemplaireController {
         return new ResponseEntity<>(exemplaireMapper.toDto(exemplaires),HttpStatus.OK);
     }
 
+    @RequestMapping("/count/{id}")
+    public ResponseEntity<ExemplaireDTO> countExemplaire (@PathVariable int id)
+    {
+        exemplaireService.countExemplaire(id);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+
 }

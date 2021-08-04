@@ -1,5 +1,6 @@
 package com.bibliotheque.API.Repository;
 
+import com.bibliotheque.API.Entity.Dto.ExemplaireDTO;
 import com.bibliotheque.API.Entity.Exemplaire;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -16,4 +17,8 @@ public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer>
     List<Exemplaire> findByAvailable(boolean b);
 
     List<Exemplaire> findByBook_idAndAvailable(int id, boolean b);
+
+    List<Exemplaire> findByBook_id(int id);
+
+    List<Exemplaire> findByBook_idAndEdition(int book_id, String edition);
 }

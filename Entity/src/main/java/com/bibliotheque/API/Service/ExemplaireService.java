@@ -10,7 +10,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 @Service
 public class ExemplaireService {
@@ -88,6 +91,33 @@ public class ExemplaireService {
     public List<Exemplaire> findbyAvailable() {
         List<Exemplaire> exemplaires = this.exemplaireRepository.findByAvailable(true);
         return exemplaires;
+    }
+
+    public List<Exemplaire> findByBook_id(int id) {
+        List<Exemplaire> exemplaires = this.exemplaireRepository.findByBook_id(id);
+        return exemplaires;
+    }
+
+    // TODO: mise en place d'une méthode pour compter le nombre d'exemplaire qui devra être executer a chaque ajout/ supression d'un exemplaire.
+
+
+    public void countExemplaire(int bookid) {
+        List<Exemplaire> exemplaireList = findByBook_id(bookid);
+
+            ArrayList<String> list = new ArrayList<>();
+            for (int i = 0; i < exemplaireList.size(); i++)
+            {
+                list.add(exemplaireList.get(i).edition);
+            }
+
+            TreeMap<String, Integer> exemplaires = new TreeMap<>();
+            for (String i : list) {
+                Integer j = exemplaires.get(i);
+                exemplaires.put(i, (j == null) ? 1 : j + 1);
+            }
+            for(Map.Entry<String, Integer> val : exemplaires.entrySet()){
+                System.out.println("Element " + val.getKey() + " " + "occurs : " + val.getValue() + " times");
+            }
     }
 }
 

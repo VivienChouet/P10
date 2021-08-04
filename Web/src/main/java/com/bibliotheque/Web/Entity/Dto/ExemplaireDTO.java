@@ -10,4 +10,5 @@ public class ExemplaireDTO {
     public String edition;
     public BookDTO book;
     public boolean available;
+    public int number;
 }

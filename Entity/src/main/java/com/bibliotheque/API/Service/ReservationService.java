@@ -1,5 +1,6 @@
 package com.bibliotheque.API.Service;
 
+import com.bibliotheque.API.Entity.Dto.ExemplaireDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Entity.Exemplaire;
 import com.bibliotheque.API.Entity.Reservation;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.TreeMap;
 
 @Service
 public class ReservationService {
@@ -68,7 +70,6 @@ public class ReservationService {
      */
     public void save(NewReservationDTO newReservationDTO) {
         logger.info("new reservation = " + newReservationDTO);
-        System.out.println("la merde : " + newReservationDTO.idexemplaire + "  //  " + exemplaireRepository.findById(newReservationDTO.idexemplaire));
         Reservation reservation = new Reservation();
         reservation.setDate_debut(newReservationDTO.date_debut);
         reservation.setDate_fin(endReservationDate(newReservationDTO.date_debut));
@@ -81,7 +82,6 @@ public class ReservationService {
         exemplaire.setAvailable(false);
         logger.info("exemplaire = " + exemplaire.edition);
         exemplaireRepository.save(exemplaire);
-
     }
 
     /**
@@ -90,7 +90,6 @@ public class ReservationService {
      * @return
      */
     public Date endReservationDate (Date date){
-
         DateTime dn = new DateTime(date);
         DateTime date_fin = dn.plusWeeks(4);
         Date dateFin = date_fin.toDate();
@@ -110,7 +109,6 @@ public class ReservationService {
         reservation.setDate_fin(endReservationDate(date));
         reservation.setExtension(true);
         reservationRepository.save(reservation);
-
     }
 
     /**
@@ -138,7 +136,7 @@ public class ReservationService {
         Exemplaire exemplaire = reservation.getExemplaire();
         exemplaire.setAvailable(true);
         exemplaireRepository.save(exemplaire);
-
     }
+
 
 }

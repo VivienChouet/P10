@@ -14,6 +14,7 @@ public class Exemplaire {
     public int id;
     public String edition;
     public boolean available;
+    public int number;
 
     @ManyToOne
     private Book book;
