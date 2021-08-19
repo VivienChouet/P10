@@ -22,7 +22,7 @@ public class ExemplaireService {
     ExemplaireRepository exemplaireRepository;
 
     @Autowired
-            BookService bookService;
+    BookService bookService;
 
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
@@ -98,26 +98,45 @@ public class ExemplaireService {
         return exemplaires;
     }
 
-    // TODO: mise en place d'une méthode pour compter le nombre d'exemplaire qui devra être executer a chaque ajout/ supression d'un exemplaire.
 
-
-    public void countExemplaire(int bookid) {
+    public TreeMap countExemplaire(int bookid) {
         List<Exemplaire> exemplaireList = findByBook_id(bookid);
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < exemplaireList.size(); i++) {
+            list.add(exemplaireList.get(i).edition);
+        }
+        TreeMap<String, Integer> exemplaires = new TreeMap<>();
+        for (String i : list) {
+            Integer j = exemplaires.get(i);
+            exemplaires.put(i, (j == null) ? 1 : j + 1);
+        }
+        for (Map.Entry<String, Integer> val : exemplaires.entrySet()) {
+            System.out.println("Element " + val.getKey() + " " + "occurs : " + val.getValue() + " times");
+        }
+        return exemplaires;
+    }
 
-            ArrayList<String> list = new ArrayList<>();
-            for (int i = 0; i < exemplaireList.size(); i++)
-            {
-                list.add(exemplaireList.get(i).edition);
+    public void updateBookIdDataBaseNumberOfExemplaire(int book_id) {
+        TreeMap<String, Integer> exemplaires = countExemplaire(book_id);
+        for (Map.Entry<String, Integer> val : exemplaires.entrySet())
+        {
+            String edition = val.getKey();
+            Integer numberExemplaire = val.getValue();
+            List<Exemplaire> exemplaireList = this.exemplaireRepository.findByBook_id(book_id);
+            logger.info("Edition mise a jour : " + edition + " nombre d'exemplaire : " + numberExemplaire);
+            for(int i = 0 ; i<exemplaireList.size() ; i++){
+                System.out.println("Taille de la liste : " + exemplaireList.size() + " id = " + exemplaireList.get(i).id);
+                if (edition == exemplaireList.get(i).getEdition() ){
+                    exemplaireList.get(i).setNumber(numberExemplaire);
+                    logger.info("save de l'exmplaire : " + exemplaireList.get(i).id + " mise a jour du nombre d'exemplaire : " + exemplaireList.get(i).number);
+                    exemplaireRepository.save(exemplaireList.get(i));
+                }
             }
+        }
+    }
 
-            TreeMap<String, Integer> exemplaires = new TreeMap<>();
-            for (String i : list) {
-                Integer j = exemplaires.get(i);
-                exemplaires.put(i, (j == null) ? 1 : j + 1);
-            }
-            for(Map.Entry<String, Integer> val : exemplaires.entrySet()){
-                System.out.println("Element " + val.getKey() + " " + "occurs : " + val.getValue() + " times");
-            }
+
+    public void updateAllDataBaseNumberOfExemplaire() {
     }
 }
 

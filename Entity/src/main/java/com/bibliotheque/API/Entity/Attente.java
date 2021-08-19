@@ -15,11 +15,11 @@ public class Attente {
     public int id;
     public Date dateMail;
     public int numberCustomer;
+    public String edition;
 
     @ManyToOne
-    private Exemplaire exemplaire;
+    private Book book;
 
-    @ManyToOne
-    private Reservation reservation;
+
 
 }
