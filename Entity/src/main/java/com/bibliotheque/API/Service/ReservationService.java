@@ -1,6 +1,5 @@
 package com.bibliotheque.API.Service;
 
-import com.bibliotheque.API.Entity.Dto.ExemplaireDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Entity.Exemplaire;
 import com.bibliotheque.API.Entity.Reservation;
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-import java.util.TreeMap;
 
 @Service
 public class ReservationService {
@@ -80,7 +78,7 @@ public class ReservationService {
         reservation.setExtension(false);
         reservationRepository.save(reservation);
         exemplaire.setAvailable(false);
-        logger.info("exemplaire = " + exemplaire.edition);
+       // logger.info("exemplaire = " + exemplaire.edition);
         exemplaireRepository.save(exemplaire);
     }
 

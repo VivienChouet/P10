@@ -1,7 +1,5 @@
 package com.bibliotheque.API.Repository;
 
-import com.bibliotheque.API.Entity.Dto.ExemplaireDTO;
-import com.bibliotheque.API.Entity.Dto.ReservationDTO;
 import com.bibliotheque.API.Entity.Exemplaire;
 import com.bibliotheque.API.Entity.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;

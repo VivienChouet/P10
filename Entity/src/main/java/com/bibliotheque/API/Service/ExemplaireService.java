@@ -1,7 +1,5 @@
 package com.bibliotheque.API.Service;
 
-import com.bibliotheque.API.Entity.Book;
-import com.bibliotheque.API.Entity.Dto.NewExemplaireDTO;
 import com.bibliotheque.API.Entity.Exemplaire;
 import com.bibliotheque.API.Repository.ExemplaireRepository;
 import com.bibliotheque.API.Utility.LoggingController;
@@ -10,10 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 @Service
 public class ExemplaireService {
@@ -24,10 +19,14 @@ public class ExemplaireService {
     @Autowired
     BookService bookService;
 
+    @Autowired
+    EditionService editionService;
+
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
     /**
      * find All
+     *
      * @return List<Exemplaire>
      */
     public List<Exemplaire> findAll() {
@@ -49,17 +48,20 @@ public class ExemplaireService {
 
     /**
      * Save
+     *
      * @param newExemplaireDTO
      */
-    public void save(NewExemplaireDTO newExemplaireDTO) {
+
+
+   /* public void save(NewExemplaireDTO newExemplaireDTO) {
         logger.info("save new exemplaire = ");
         Exemplaire exemplaire = new Exemplaire();
-        Book book = bookService.findById(newExemplaireDTO.getIdBook());
+        Edition edition = editionService.findById(newExemplaireDTO;)
         exemplaire.setBook(book);
         exemplaire.setEdition(newExemplaireDTO.getEdition());
         exemplaire.setAvailable(true);
         exemplaireRepository.save(exemplaire);
-    }
+    }*/
 
     /**
      * Delete
@@ -93,12 +95,12 @@ public class ExemplaireService {
         return exemplaires;
     }
 
-    public List<Exemplaire> findByBook_id(int id) {
-        List<Exemplaire> exemplaires = this.exemplaireRepository.findByBook_id(id);
+    public List<Exemplaire> findByEdition_id(int id) {
+        List<Exemplaire> exemplaires = this.exemplaireRepository.findByEdition_Id(id);
         return exemplaires;
     }
 
-
+/*
     public TreeMap countExemplaire(int bookid) {
         List<Exemplaire> exemplaireList = findByBook_id(bookid);
         ArrayList<String> list = new ArrayList<>();
@@ -115,8 +117,8 @@ public class ExemplaireService {
         }
         return exemplaires;
     }
-
-    public void updateBookIdDataBaseNumberOfExemplaire(int book_id) {
+*/
+/*  public void updateBookIdDataBaseNumberOfExemplaire(int book_id) {
         TreeMap<String, Integer> exemplaires = countExemplaire(book_id);
         for (Map.Entry<String, Integer> val : exemplaires.entrySet())
         {
@@ -133,10 +135,6 @@ public class ExemplaireService {
                 }
             }
         }
-    }
-
-
-    public void updateAllDataBaseNumberOfExemplaire() {
-    }
+    }*/
 }
 

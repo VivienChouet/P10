@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="- Supression du Bug de reservation et traitement ramener sur le Back">
-      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-08-03.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" beforeDir="false" afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" afterDir="false" />
+    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="- Ajout des methode d'update du nombre d'exemplaire">
+      <change afterPath="$PROJECT_DIR$/.jpb/jpb-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/EditionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/EditionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Edition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Mapper/EditionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/EditionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/EditionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/AttenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/AttenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireCountDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +38,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JpaRepository" />
         <option value="Class" />
         <option value="Interface" />
       </list>
@@ -43,14 +59,21 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="JPA Structure" value="false" />
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="true" />
       </map>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1vtVPJDf2tjvHR9JrWs3NB9dnzt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -82,7 +105,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.71821755" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -156,6 +179,14 @@
       <workItem from="1628864099658" duration="1335000" />
       <workItem from="1629193978033" duration="1208000" />
       <workItem from="1629287023273" duration="4282000" />
+      <workItem from="1629363993219" duration="5329000" />
+      <workItem from="1629552121724" duration="4240000" />
+      <workItem from="1629972712416" duration="3632000" />
+      <workItem from="1630072702668" duration="2613000" />
+      <workItem from="1630150400740" duration="9241000" />
+      <workItem from="1630163608191" duration="1212000" />
+      <workItem from="1630239113047" duration="1617000" />
+      <workItem from="1630330521764" duration="1154000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit / push">
       <created>1627383616785</created>
@@ -227,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628093872493</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- Ajout des methode d'update du nombre d'exemplaire">
+      <created>1629364138955</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629364138955</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +282,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="Reservation" />
                       </list>
                     </value>
                   </entry>
@@ -268,7 +306,8 @@
     <MESSAGE value="Mise en place de la classe Attente &#10;Ajout column number dans exemplaire" />
     <MESSAGE value="- Ajout de la methode permettant d'avoir la date du prochain retour.&#10;Bug de réservation : &#10;- Si il y a 2 ou plus d'exemplaires d'une même edition la reservation se fait uniquement sur la premiere entrée et cela ajoute plusieurs fois la même reservation d'un exemplairId unique." />
     <MESSAGE value="- Supression du Bug de reservation et traitement ramener sur le Back" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Supression du Bug de reservation et traitement ramener sur le Back" />
+    <MESSAGE value="- Ajout des methode d'update du nombre d'exemplaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Ajout des methode d'update du nombre d'exemplaire" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

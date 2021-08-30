@@ -46,11 +46,11 @@ public class ExemplaireController {
         return new ResponseEntity<>(exemplaireMapper.toDto(exemplaire), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+   /* @PostMapping("/")
     public  ResponseEntity<ExemplaireDTO> newExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){
         exemplaireService.save(newExemplaireDTO);
         return new ResponseEntity<>(HttpStatus.OK);
-    }
+    }*/
 
     @DeleteMapping("/")
     public ResponseEntity<ExemplaireDTO> deleteExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){
@@ -58,12 +58,12 @@ public class ExemplaireController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/")
+ /*   @PutMapping("/")
     public ResponseEntity<ExemplaireDTO> updateExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){
         exemplaireService.save(newExemplaireDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
+*/
     @GetMapping("/book/available/{id}")
     public ResponseEntity<List<ExemplaireDTO>> listExemplaireByBookId (@PathVariable int id){
         List<Exemplaire> exemplaires = this.exemplaireService.findByBook_idAndAvailable(id);
@@ -80,11 +80,5 @@ public class ExemplaireController {
         return new ResponseEntity<>(exemplaireMapper.toDto(exemplaires),HttpStatus.OK);
     }
 
-    @RequestMapping("/count/{id}")
-    public ResponseEntity<ExemplaireDTO> countExemplaire (@PathVariable int id)
-    {
-        exemplaireService.countExemplaire(id);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
-    }
 
 }

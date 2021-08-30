@@ -1,15 +1,13 @@
 package com.bibliotheque.API.Entity.Dto;
 
-import com.bibliotheque.API.Entity.Book;
+import com.bibliotheque.API.Entity.Edition;
 import lombok.Data;
 
 @Data
 public class ExemplaireDTO {
 
     public int id;
-    public String edition;
     public boolean available;
-    public int number;
-    private Book book;
+    private Edition edition;
 
 }

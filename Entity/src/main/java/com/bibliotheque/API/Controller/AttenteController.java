@@ -30,9 +30,5 @@ public class AttenteController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping("miseajour/{book_id}")
-    public ResponseEntity MiseAJourNumberEdition(@PathVariable int book_id){
-        exemplaireService.updateBookIdDataBaseNumberOfExemplaire(book_id);
-        return new ResponseEntity(HttpStatus.OK);
-    }
+
 }

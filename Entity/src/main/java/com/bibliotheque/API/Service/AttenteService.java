@@ -1,6 +1,5 @@
 package com.bibliotheque.API.Service;
 
-import com.bibliotheque.API.Entity.Book;
 import com.bibliotheque.API.Entity.Dto.*;
 import com.bibliotheque.API.Entity.Exemplaire;
 import com.bibliotheque.API.Entity.Reservation;
@@ -58,12 +57,12 @@ public class AttenteService {
 
     //TODO: methode permettant d'avoir le nombre de queu max
 
-    public Integer attenteNumberMax (int book_id, String edition){
+  /*  public Integer attenteNumberMax (int book_id, String edition){
        Integer attenteNumberMax = null;
        TreeMap<String, Integer> exemplaires = this.exemplaireService.countExemplaire(book_id);
 
        return attenteNumberMax;
-    }
+    }*/
 
     //TODO: methode permettant d'envoyer un mail
 

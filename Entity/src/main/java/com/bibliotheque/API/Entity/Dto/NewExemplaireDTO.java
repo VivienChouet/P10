@@ -8,7 +8,7 @@ public class NewExemplaireDTO {
 
     private int id;
     private String edition;
-    private int idBook;
+
 
 }
 

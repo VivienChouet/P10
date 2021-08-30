@@ -3,23 +3,17 @@ package com.bibliotheque.API.Entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
-
 @Entity
-@Table(name = "attente")
+@Table(name = "edition")
 @Data
-public class Attente {
+public class Edition {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
-    public Date dateMail;
-    public int numberCustomer;
-
+    public String name;
 
     @ManyToOne
-    private Edition edition;
-
-
+    public Book book;
 
 }
