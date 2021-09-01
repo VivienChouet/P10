@@ -6,7 +6,7 @@ import lombok.Data;
 public class NewReservationDTO {
 
     public int id;
-    public String edition;
+    public int edition;
     public int user;
 
 

@@ -1,6 +1,9 @@
 package com.bibliotheque.API.Service;
 
+import com.bibliotheque.API.Entity.Dto.NewExemplaireDTO;
+import com.bibliotheque.API.Entity.Edition;
 import com.bibliotheque.API.Entity.Exemplaire;
+import com.bibliotheque.API.Repository.EditionRepository;
 import com.bibliotheque.API.Repository.ExemplaireRepository;
 import com.bibliotheque.API.Utility.LoggingController;
 import org.slf4j.Logger;
@@ -15,12 +18,13 @@ public class ExemplaireService {
 
     @Autowired
     ExemplaireRepository exemplaireRepository;
-
     @Autowired
     BookService bookService;
-
     @Autowired
     EditionService editionService;
+    @Autowired
+    EditionRepository editionRepository;
+
 
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
@@ -53,15 +57,14 @@ public class ExemplaireService {
      */
 
 
-   /* public void save(NewExemplaireDTO newExemplaireDTO) {
+ public void save(NewExemplaireDTO newExemplaireDTO) {
         logger.info("save new exemplaire = ");
         Exemplaire exemplaire = new Exemplaire();
-        Edition edition = editionService.findById(newExemplaireDTO;)
-        exemplaire.setBook(book);
-        exemplaire.setEdition(newExemplaireDTO.getEdition());
+        Edition edition = this.editionRepository.findById(newExemplaireDTO.getEdition()).get();
         exemplaire.setAvailable(true);
+        exemplaire.setEdition(edition);
         exemplaireRepository.save(exemplaire);
-    }*/
+    }
 
     /**
      * Delete
@@ -80,15 +83,11 @@ public class ExemplaireService {
      */
     public List<Exemplaire> findByBook_idAndAvailable(int id) {
         logger.info("find Exemplaire by Book Id = " + id);
-        List<Exemplaire> exemplaires = this.exemplaireRepository.findByBook_idAndAvailable(id, true);
+        List<Exemplaire> exemplaires = this.exemplaireRepository.findByEdition_IdAndAvailable(id, true);
         return exemplaires;
     }
 
-    public List<Exemplaire> findByBook_idAndEdition(int id, String edition) {
-        logger.info("Search By book_id : " + id + " And by edition : " + edition);
-        List<Exemplaire> exemplaires = this.exemplaireRepository.findByBook_IdAndEdition(id, edition);
-        return exemplaires;
-    }
+
 
     public List<Exemplaire> findbyAvailable() {
         List<Exemplaire> exemplaires = this.exemplaireRepository.findByAvailable(true);
@@ -98,6 +97,12 @@ public class ExemplaireService {
     public List<Exemplaire> findByEdition_id(int id) {
         List<Exemplaire> exemplaires = this.exemplaireRepository.findByEdition_Id(id);
         return exemplaires;
+    }
+
+    public void reservation(Exemplaire exemplaire) {
+        logger.info("exemplaire id " + exemplaire.id + " reserved");
+        exemplaire.setAvailable(false);
+        exemplaireRepository.save(exemplaire);
     }
 
 /*

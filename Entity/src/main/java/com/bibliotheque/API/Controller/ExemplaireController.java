@@ -46,11 +46,11 @@ public class ExemplaireController {
         return new ResponseEntity<>(exemplaireMapper.toDto(exemplaire), HttpStatus.OK);
     }
 
-   /* @PostMapping("/")
+@PostMapping("/")
     public  ResponseEntity<ExemplaireDTO> newExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){
         exemplaireService.save(newExemplaireDTO);
         return new ResponseEntity<>(HttpStatus.OK);
-    }*/
+    }
 
     @DeleteMapping("/")
     public ResponseEntity<ExemplaireDTO> deleteExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){
@@ -73,12 +73,7 @@ public class ExemplaireController {
         return new ResponseEntity<>(exemplaireMapper.toDto(exemplaires), HttpStatus.OK);
     }
 
-    @PostMapping("/edition")
-        public ResponseEntity<List<ExemplaireDTO>> listExemplaireByEditionAndBook (@RequestBody ReservationResearchDTO reservationResearchDTO){
-        List<Exemplaire> exemplaires = this.exemplaireService.findByBook_idAndEdition(reservationResearchDTO.getId(),reservationResearchDTO.getEdition());
 
-        return new ResponseEntity<>(exemplaireMapper.toDto(exemplaires),HttpStatus.OK);
-    }
 
 
 }

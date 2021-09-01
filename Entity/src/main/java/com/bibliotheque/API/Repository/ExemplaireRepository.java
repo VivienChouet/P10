@@ -11,15 +11,11 @@ public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer>
 
 
     Exemplaire findById(int id);
-    List<Exemplaire> findByBook_IdAndEdition(int id, String edition);
 
     List<Exemplaire> findByAvailable(boolean b);
 
-    List<Exemplaire> findByBook_idAndAvailable(int id, boolean b);
+    List<Exemplaire> findByEdition_IdAndAvailable(int id, boolean b);
 
     List<Exemplaire> findByEdition_Id(int id);
 
-    List<Exemplaire> findByBook_idAndEdition(int book_id, String edition);
-
-    List<Exemplaire> findByBook_IdAndEditionAndAvailable(int idExemplaire, String edition, boolean b);
 }

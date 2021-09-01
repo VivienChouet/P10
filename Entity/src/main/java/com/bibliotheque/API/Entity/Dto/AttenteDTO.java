@@ -9,9 +9,7 @@ import java.util.Date;
 public class AttenteDTO {
     public int id;
     public Date dateMail;
-    public int numberCustomer;
-    public String edition;
-    public BookDTO book;
+    public EditionDTO edition;
     private UserDTO user;
 
 

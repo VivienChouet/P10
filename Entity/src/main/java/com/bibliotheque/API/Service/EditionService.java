@@ -1,7 +1,10 @@
 package com.bibliotheque.API.Service;
 
+import com.bibliotheque.API.Entity.Book;
+import com.bibliotheque.API.Entity.Dto.NewEditionDTO;
 import com.bibliotheque.API.Entity.Edition;
 import com.bibliotheque.API.Entity.Exemplaire;
+import com.bibliotheque.API.Repository.BookRepository;
 import com.bibliotheque.API.Repository.EditionRepository;
 import com.bibliotheque.API.Utility.LoggingController;
 import org.slf4j.Logger;
@@ -20,12 +23,18 @@ public class EditionService {
     EditionRepository editionRepository;
     @Autowired
     ExemplaireService exemplaireService;
+    @Autowired
+    BookRepository bookRepository;
 
 
 
-    public void save (Edition edition){
-        logger.info("save new edition : " + edition.name);
-              editionRepository.save(edition);
+    public void save (NewEditionDTO newEditionDTO){
+        logger.info("save new edition : " + newEditionDTO.name);
+        Book book =  this.bookRepository.findById(newEditionDTO.book).get();
+        Edition edition = new Edition();
+        edition.setBook(book);
+        edition.setName(newEditionDTO.name);
+        editionRepository.save(edition);
     }
 
     public void delete (int id){
@@ -46,4 +55,5 @@ public class EditionService {
         List<Edition> editions = this.editionRepository.findByBook_Id(id);
         return editions;
     }
+
 }

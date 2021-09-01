@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface AttenteRepository extends JpaRepository<Attente, Integer> {
 
-    List<Attente> findByBookAndEdition(int book_id, String edition);
 
+    List<Attente> findByEditionId(int edition_id);
 }

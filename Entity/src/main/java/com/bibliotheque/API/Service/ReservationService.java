@@ -71,15 +71,13 @@ public class ReservationService {
         Reservation reservation = new Reservation();
         reservation.setDate_debut(new Date());
         reservation.setDate_fin(endReservationDate(new Date()));
-        Exemplaire exemplaire = this.exemplaireRepository.findByBook_IdAndEditionAndAvailable(newReservationDTO.id, newReservationDTO.edition, true).get(0);
-        reservation.setExemplaire(exemplaire);
         reservation.setUser(userRepository.findById(newReservationDTO.user).get());
         reservation.setEnded(false);
         reservation.setExtension(false);
+        reservation.setExemplaire(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition,true).get(0));
         reservationRepository.save(reservation);
-        exemplaire.setAvailable(false);
-       // logger.info("exemplaire = " + exemplaire.edition);
-        exemplaireRepository.save(exemplaire);
+        exemplaireService.reservation(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition,true).get(0));
+
     }
 
 

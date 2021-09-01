@@ -1,6 +1,7 @@
 package com.bibliotheque.API.Controller;
 
 import com.bibliotheque.API.Entity.Dto.EditionDTO;
+import com.bibliotheque.API.Entity.Dto.NewEditionDTO;
 import com.bibliotheque.API.Entity.Edition;
 import com.bibliotheque.API.Entity.Mapper.EditionMapper;
 import com.bibliotheque.API.Service.EditionService;
@@ -22,8 +23,8 @@ public class EditionController {
     EditionMapper editionMapper;
 
     @PostMapping("/new")
-    public ResponseEntity <EditionDTO> newEdition (@RequestBody EditionDTO editionDTO){
-        editionService.save(editionMapper.toEntity(editionDTO));
+    public ResponseEntity <EditionDTO> newEdition (@RequestBody NewEditionDTO newEditionDTO){
+        editionService.save(newEditionDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -4,29 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="- Ajout des methode d'update du nombre d'exemplaire">
-      <change afterPath="$PROJECT_DIR$/.jpb/jpb-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/EditionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/EditionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Edition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Mapper/EditionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/EditionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/EditionService.java" afterDir="false" />
+    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="DEBUG : Lombok Does not work with IntelliJ EAP 2020.3">
+      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-08-30.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewAttenteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewEditionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" beforeDir="false" afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/AttenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/AttenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/EditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/EditionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireCountDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/EditionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/EditionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" afterDir="false" />
     </list>
@@ -39,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JpaRepository" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,7 +50,16 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -67,7 +72,7 @@
     <option name="myId2Visible">
       <map>
         <entry key="JPA Inspector" value="true" />
-        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
@@ -101,7 +106,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.71821755" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -187,6 +192,7 @@
       <workItem from="1630163608191" duration="1212000" />
       <workItem from="1630239113047" duration="1617000" />
       <workItem from="1630330521764" duration="1154000" />
+      <workItem from="1630496892672" duration="9196000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit / push">
       <created>1627383616785</created>
@@ -289,6 +295,11 @@
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+        <entry key="f8673af3-922c-4f1d-88de-7691dfd9d8bf">
+          <value>
+            <State />
           </value>
         </entry>
       </map>

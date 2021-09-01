@@ -14,11 +14,13 @@ public class Attente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public Date dateMail;
-    public int numberCustomer;
 
-
+    @JoinColumn(nullable = false)
+    @ManyToOne(optional = false)
+    private User user;
     @ManyToOne
     private Edition edition;
+
 
 
 
