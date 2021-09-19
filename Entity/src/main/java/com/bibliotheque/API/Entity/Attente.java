@@ -14,6 +14,7 @@ public class Attente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public Date dateMail;
+    public Boolean mail;
 
     @JoinColumn(nullable = false)
     @ManyToOne(optional = false)

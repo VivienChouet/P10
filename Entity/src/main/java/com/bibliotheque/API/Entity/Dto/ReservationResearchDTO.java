@@ -6,7 +6,6 @@ import lombok.Data;
 public class ReservationResearchDTO {
 
     private Integer id;
-    private EditionDTO edition;
     private Integer userid;
 
 }

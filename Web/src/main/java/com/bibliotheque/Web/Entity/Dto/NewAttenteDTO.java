@@ -2,14 +2,9 @@ package com.bibliotheque.Web.Entity.Dto;
 
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
-public class NewReservationDTO {
+public class NewAttenteDTO {
 
-
-    public int edition;
     public int user;
-
+    public int edition;
 }
-

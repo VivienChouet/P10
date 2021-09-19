@@ -2,6 +2,7 @@ package com.bibliotheque.API.Controller;
 
 import com.bibliotheque.API.Entity.Book;
 import com.bibliotheque.API.Entity.Dto.BookDTO;
+import com.bibliotheque.API.Entity.Dto.NewBookDTO;
 import com.bibliotheque.API.Entity.Mapper.BookMapper;
 import com.bibliotheque.API.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,8 @@ public class BookController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<BookDTO> newBook(@RequestBody BookDTO bookDTO) {
-        bookService.save(bookMapper.toEntity(bookDTO));
+    public ResponseEntity<NewBookDTO> newBook(@RequestBody NewBookDTO newBookDTO) {
+        bookService.save(newBookDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -1,5 +1,6 @@
 package com.bibliotheque.API.Service;
 
+import com.bibliotheque.API.Entity.Dto.EditionWithNumberOfExemplaireDTO;
 import com.bibliotheque.API.Entity.Dto.NewExemplaireDTO;
 import com.bibliotheque.API.Entity.Edition;
 import com.bibliotheque.API.Entity.Exemplaire;
@@ -11,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -24,6 +26,8 @@ public class ExemplaireService {
     EditionService editionService;
     @Autowired
     EditionRepository editionRepository;
+    @Autowired
+            AttenteService attenteService;
 
 
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
@@ -105,41 +109,28 @@ public class ExemplaireService {
         exemplaireRepository.save(exemplaire);
     }
 
-/*
-    public TreeMap countExemplaire(int bookid) {
-        List<Exemplaire> exemplaireList = findByBook_id(bookid);
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < exemplaireList.size(); i++) {
-            list.add(exemplaireList.get(i).edition);
+    public List<EditionWithNumberOfExemplaireDTO> editionWithAllNumber(int id) {
+        logger.info("Search all edition with some number ");
+        List<EditionWithNumberOfExemplaireDTO> editionWithNumberOfExemplaireDTOS = new ArrayList<>();
+        List<Edition> editions = this.editionRepository.findByBook_Id(id);
+        for (Edition edition: editions) {
+            List<Exemplaire> exemplaires = this.findByEdition_id(edition.id);
+            int exemplaireTotal = exemplaires.size();
+            List<Exemplaire> exemplaires1 = this.findByBook_idAndAvailable(id);
+            int reservationAvailable = exemplaires1.size();
+            int attenteAvailable = attenteService.numberAttenteAvailable(edition.id);
+           EditionWithNumberOfExemplaireDTO numberOfExemplaireDTO = new EditionWithNumberOfExemplaireDTO();
+           numberOfExemplaireDTO.setEditionName(edition.name);
+           numberOfExemplaireDTO.setBook_id(edition.getBook().id);
+           numberOfExemplaireDTO.setNumberOfEditionAvailable(reservationAvailable);
+           numberOfExemplaireDTO.setNumberOfEditionTotal(exemplaireTotal);
+           numberOfExemplaireDTO.setAttenteAvailable(attenteAvailable);
+           numberOfExemplaireDTO.setEdition_id(edition.id);
+            editionWithNumberOfExemplaireDTOS.add(numberOfExemplaireDTO);
         }
-        TreeMap<String, Integer> exemplaires = new TreeMap<>();
-        for (String i : list) {
-            Integer j = exemplaires.get(i);
-            exemplaires.put(i, (j == null) ? 1 : j + 1);
-        }
-        for (Map.Entry<String, Integer> val : exemplaires.entrySet()) {
-            System.out.println("Element " + val.getKey() + " " + "occurs : " + val.getValue() + " times");
-        }
-        return exemplaires;
+        logger.info("Book id " + id + " = " + editionWithNumberOfExemplaireDTOS );
+        return editionWithNumberOfExemplaireDTOS;
     }
-*/
-/*  public void updateBookIdDataBaseNumberOfExemplaire(int book_id) {
-        TreeMap<String, Integer> exemplaires = countExemplaire(book_id);
-        for (Map.Entry<String, Integer> val : exemplaires.entrySet())
-        {
-            String edition = val.getKey();
-            Integer numberExemplaire = val.getValue();
-            List<Exemplaire> exemplaireList = this.exemplaireRepository.findByBook_id(book_id);
-            logger.info("Edition mise a jour : " + edition + " nombre d'exemplaire : " + numberExemplaire);
-            for(int i = 0 ; i<exemplaireList.size() ; i++){
-                System.out.println("Taille de la liste : " + exemplaireList.size() + " id = " + exemplaireList.get(i).id);
-                if (edition == exemplaireList.get(i).getEdition() ){
-                    exemplaireList.get(i).setNumber(numberExemplaire);
-                    logger.info("save de l'exmplaire : " + exemplaireList.get(i).id + " mise a jour du nombre d'exemplaire : " + exemplaireList.get(i).number);
-                    exemplaireRepository.save(exemplaireList.get(i));
-                }
-            }
-        }
-    }*/
+
 }
 

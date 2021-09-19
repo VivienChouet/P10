@@ -1,15 +1,28 @@
 package com.bibliotheque.API.Service;
 
 import com.bibliotheque.API.Entity.*;
-import com.bibliotheque.API.Entity.Dto.*;
+import com.bibliotheque.API.Entity.Dto.AttenteDTO;
+import com.bibliotheque.API.Entity.Dto.NewAttenteDTO;
+import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Repository.*;
 import com.bibliotheque.API.Utility.LoggingController;
+import com.sendgrid.Method;
+import com.sendgrid.Request;
+import com.sendgrid.Response;
+import com.sendgrid.SendGrid;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class AttenteService {
@@ -26,58 +39,163 @@ public class AttenteService {
     UserRepository userRepository;
     @Autowired
     EditionRepository editionRepository;
+    @Autowired
+    ReservationService reservationService;
 
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
 
-    //TODO: methode permettant d'inscrire un user dans la queu
+    public void newAttente(NewAttenteDTO newAttenteDTO) {
+        List<Reservation> reservations = this.reservationRepository.findByUser_IdAndExemplaire_Edition_Id(newAttenteDTO.user,newAttenteDTO.edition);
+        List<Attente> attentes = this.attenteRepository.findByEdition_IdAndUser_Id(newAttenteDTO.edition, newAttenteDTO.user);
+            if (attentePossible(newAttenteDTO.edition) && reservations.size()== 0 && attentes.size()==0) {
+            User user = this.userRepository.findById(newAttenteDTO.user).get();
+            Edition edition = this.editionRepository.findById(newAttenteDTO.edition).get();
+            Attente attente = new Attente();
+            attente.setUser(user);
+            attente.setEdition(edition);
+            attenteRepository.save(attente);
+            logger.info("new attente créer");
+        }
+        logger.info("new attente impossible");
+    }
 
-public void newAttente (NewAttenteDTO newAttenteDTO){
-    if (attentePossible(newAttenteDTO.edition)){
-        User user = this.userRepository.findById(newAttenteDTO.user).get();
-        Edition edition = this.editionRepository.findById(newAttenteDTO.edition).get();
-        Attente attente = new Attente();
-        attente.setUser(user);
-        attente.setEdition(edition);
+    public Integer attenteNumberMax(int edition_id) {
+        Integer attenteNumberMax = null;
+        List<Exemplaire> exemplaires = this.exemplaireService.findByEdition_id(edition_id);
+        attenteNumberMax = 2 * exemplaires.size();
+        logger.info("attente max pour l'edition id : " + edition_id + " est de = " + attenteNumberMax);
+        return attenteNumberMax;
+    }
+
+    public Integer attenteNumberOnEdition(int edition_id) {
+        Integer attenteNumber = null;
+        List<Attente> attentes = attenteRepository.findByEditionId(edition_id);
+        attenteNumber = attentes.size();
+        logger.info("attente en cours pour l'edition id : " + edition_id + " est de = " + attenteNumber);
+        return attenteNumber;
+    }
+
+    public Integer numberAttenteAvailable(int edition_id) {
+        int attenteMax = attenteNumberMax(edition_id);
+        int attente = attenteNumberOnEdition(edition_id);
+        int attenteAvailable = attenteMax - attente;
+        logger.info("nombre d'attente disponible pour edition id : " + edition_id + " est de = " + attenteAvailable);
+        return attenteAvailable;
+    }
+
+    public boolean attentePossible(int edition_id) {
+        boolean attente = numberAttenteAvailable(edition_id) != 0 && numberAttenteAvailable(edition_id) > 0;
+        logger.info("new attente possible : " + attente);
+        return attente;
+    }
+
+    public void deleteAttente(int id) {
+        Attente attente = this.attenteRepository.findById(id).get();
+        attenteRepository.delete(attente);
+        logger.info("suppression attente id = " + id);
+    }
+
+    /*
+    Logique de la fonction General Attente
+     */
+
+    /**
+     *
+     */
+    public void attenteToReservation(int edition_id) throws Exception {
+        Attente attente = this.attenteRepository.findByEditionId(edition_id).get(0);
+        sendmail(attente);
+        updateReservation(attente);
+    }
+
+/*
+Si Le livre est récupérer
+ */
+
+    public void AttenteAccepter(int id){
+        deleteAttente(id);
+    }
+
+
+/*
+Si le livre n'est pas récuperer Fonction BATCH
+*/
+
+    public List<Attente> attenteBatch (){
+        List<Attente> attentes = new ArrayList<>();
+        Date date = new Date();
+        DateTime dn = new DateTime(date);
+        DateTime date_fin = dn.minusHours(48);
+        Date dateFin = date_fin.toDate();
+        int comparaison = 0;
+        List<Attente> attenteListAll = this.attenteRepository.findAll();
+        for (int i = 0; attenteListAll.size() > i ; i++){
+            comparaison = attenteListAll.get(i).dateMail.compareTo(dateFin);
+            if(comparaison < 0){
+                attentes.add(attenteListAll.get(i));
+               }
+            }
+        System.out.println("Liste des attentes en retard =  " + attentes);
+        return attentes;
+    }
+
+    public void attenteNonRecuperer(int id) throws Exception {
+        Attente attente = attenteRepository.findById(id).get();
+        int id_Reservation = this.reservationRepository.findByUser_IdAndExemplaire_Edition_Id(attente.getUser().getId(),attente.getEdition().getId()).get(0).getId();
+        reservationService.endReservation(id_Reservation);
+        deleteAttente(id);
+    }
+
+/*
+Methode Logique Attente
+ */
+
+    public void sendmail(Attente attente) throws Exception {
+        Email from = new Email("slaschh@gmail.com");
+        String subject = "Votre livre :  " + attente.getEdition().getBook().getTitle() + " vous attend à la bibliotheque";
+        Email to = new Email(attente.getUser().email);
+        Content content = new Content("text/plain", "Bonjour Mr/Mme " + attente.getUser().getName() + ' ' + ",\n" +
+                "Vous vous étiez inscrit a une liste d'attente pour le livre : " + attente.getEdition().getBook().getTitle() + " ayant pour édition  : " + attente.getEdition().getName() + ".\n" +
+                "Vous pouvez dès a présent venir le récuperer. Passer un délai de 48h votre reservation sera annulée ");
+
+        Mail mail = new Mail(from, subject, to, content);
+
+        SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
+        Request request = new Request();
+        try {
+            request.setMethod(Method.POST);
+            request.setEndpoint("mail/send");
+            request.setBody(mail.build());
+            Response response = sg.api(request);
+            logger.info("mail send : " + response.getHeaders());
+        } catch (IOException ex) {
+            throw ex;
+        }
+    }
+
+    public void updateReservation(Attente attente) {
+        Date date = new Date();
+        attente.setDateMail(date);
         attenteRepository.save(attente);
-        logger.info("new attente créer");
-    }
-    logger.info("new attente impossible");
-}
-
- public Integer attenteNumberMax (int edition_id){
-       Integer attenteNumberMax = null;
-       List<Exemplaire> exemplaires = this.exemplaireService.findByEdition_id(edition_id);
-       attenteNumberMax = 2*exemplaires.size();
-     logger.info("attente max pour l'edition id : " + edition_id + " est de = " + attenteNumberMax);
-       return attenteNumberMax;
+        NewReservationDTO newReservationDTO = new NewReservationDTO();
+        newReservationDTO.setEdition(attente.getEdition().id);
+        newReservationDTO.setUser(attente.getUser().getId());
+        reservationService.save(newReservationDTO);
+        logger.info("update reservation suite attente id = " + attente.id);
     }
 
-    public Integer attenteNumberOnEdition (int edition_id){
-    Integer attenteNumber = null;
-    List<Attente> attentes = attenteRepository.findByEditionId(edition_id);
-    attenteNumber = attentes.size();
-    logger.info("attente en cours pour l'edition id : " + edition_id + " est de = " + attenteNumber);
-    return attenteNumber;
+
+    public List<Attente> findByEdition_Id(int id) {
+        List<Attente> attentes = this.attenteRepository.findByEditionId(id);
+
+        return attentes;
     }
 
-    public Integer numberAttenteAvailable (int edition_id){
-    int attenteMax = attenteNumberMax(edition_id);
-    int attente = attenteNumberOnEdition(edition_id);
-    int attenteAvailable = attenteMax-attente;
-    logger.info("nombre d'attente disponible pour edition id : " + edition_id + " est de = " + attenteAvailable);
-    return attenteAvailable;
+    public List<Attente> findByDate_mail() {
+
+        List<Attente> attentes = this.attenteRepository.findAttenteByDateMailNotNull();
+        logger.info("list de toutes les attentes a récuperer : " + attentes.size());
+        return attentes;
     }
-
-    public boolean attentePossible (int edition_id){
-    boolean attente = false;
-    if (numberAttenteAvailable(edition_id) != 0 && numberAttenteAvailable(edition_id) > 0 )
-    attente = true;
-    logger.info("new attente possible : " + attente);
-    return attente;
-    }
-
-    //TODO: methode permettant d'envoyer un mail
-
-
 }

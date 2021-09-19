@@ -6,11 +6,11 @@ import org.springframework.batch.item.ItemReader;
 import java.net.http.HttpResponse;
 import java.util.List;
 
-public class Reader implements ItemReader<ReservationDTO> {
+public class ReaderReservation implements ItemReader<ReservationDTO> {
     public boolean batch = false;
     private int count = 0;
 
-    public Reader() {
+    public ReaderReservation() {
 
         batch = false;
     }
@@ -19,7 +19,7 @@ public class Reader implements ItemReader<ReservationDTO> {
     @Override
     public ReservationDTO read() throws Exception {
         ReaderAPI readerAPI = new ReaderAPI();
-        HttpResponse response = readerAPI.httpResponse();
+        HttpResponse response = readerAPI.batchRetard();
         if (response.statusCode() != 204) {
             List<ReservationDTO> reservationDTOS = readerAPI.reservationDTOS(response);
             if (count < reservationDTOS.size()) {

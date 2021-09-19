@@ -1,6 +1,7 @@
 package com.bibliotheque.API.Service;
 
 import com.bibliotheque.API.Entity.Book;
+import com.bibliotheque.API.Entity.Dto.NewBookDTO;
 import com.bibliotheque.API.Repository.BookRepository;
 import com.bibliotheque.API.Utility.LoggingController;
 import org.slf4j.Logger;
@@ -41,8 +42,13 @@ public class BookService {
      * Save
      * @param book
      */
-    public void save(Book book) {
-        logger.info("save new book = " + book.title);
+    public void save(NewBookDTO newBookDTO) {
+        logger.info("save new book = " + newBookDTO.getTitle());
+        Book book = new Book();
+        book.setAuthor(newBookDTO.getAuthor());
+        book.setPublication(newBookDTO.getPublication());
+        book.setTitle(newBookDTO.getTitle());
+        book.setResume(newBookDTO.getResume());
         bookRepository.save(book);
     }
 

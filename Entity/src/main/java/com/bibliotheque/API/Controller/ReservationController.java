@@ -3,6 +3,7 @@ package com.bibliotheque.API.Controller;
 
 
 import com.bibliotheque.API.Entity.Dto.DeleteReservationDTO;
+import com.bibliotheque.API.Entity.Dto.MyReservationDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Entity.Dto.ReservationDTO;
 import com.bibliotheque.API.Entity.Mapper.ReservationMapper;
@@ -65,9 +66,9 @@ public class ReservationController {
     }
 
     @GetMapping("/myreservation")
-    public ResponseEntity<List<ReservationDTO>> reservationByUser (@RequestHeader("Authorization") String token){
-        List<Reservation> reservations = this.reservationService.findByUser(token);
-        return new ResponseEntity<>(reservationMapper.toDto(reservations), HttpStatus.OK);
+    public ResponseEntity<List<MyReservationDTO>> reservationByUser (@RequestHeader("Authorization") String token){
+        List<MyReservationDTO> myReservationDTO = this.reservationService.myReservation(token);
+        return new ResponseEntity<>(myReservationDTO, HttpStatus.OK);
     }
 
     @PostMapping("/extension/{id}")
@@ -82,7 +83,7 @@ if (reservation.extension){
     }
 
     @PostMapping("/return/{id}")
-    public ResponseEntity<ReservationDTO> endReservation (@PathVariable int id){
+    public ResponseEntity<ReservationDTO> endReservation (@PathVariable int id) throws Exception {
         reservationService.endReservation(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

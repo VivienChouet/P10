@@ -34,13 +34,13 @@
                     </thread>
                     <tbody>
                     <tr th:each="reservation : ${reservations}">
-                        <td th:text="${reservation.exemplaire.book.title}"></td>
-                        <td th:text="${reservation.user.name}"></td>
-                        <td th:text="${reservation.exemplaire.edition}"></td>
-                        <td th:text="${reservation.date_debut}"></td>
-                        <td th:text="${reservation.date_fin}"></td>
-                        <td th:if="${reservation.extension} == false">
-                            <form method="post" th:action="@{/reservation/end/{id}(id=${reservation.id})}">
+                        <td th:text="${reservation.getExemplaire().getEdition().getBook().getTitle()}"></td>
+                        <td th:text="${reservation.getUser().getName()}"></td>
+                        <td th:text="${reservation.getExemplaire().getEdition().getName()}"></td>
+                        <td th:text="${reservation.getDate_debut()}"></td>
+                        <td th:text="${reservation.getDate_fin()}"></td>
+                        <td th:if="${reservation.isExtension()} == false">
+                            <form method="post" th:action="@{/reservation/end/{id}(id=${reservation.getId()})}">
                                 <button class="btn btn-primary btn-block btn-flat" type="submit">Rendu
                                 </button>
                             </form>

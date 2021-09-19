@@ -10,10 +10,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 
-public class Writer implements ItemWriter<ReservationDTO> {
+public class WriterReservation implements ItemWriter<ReservationDTO> {
 
 
-    public Writer(){
+    public WriterReservation(){
 
     }
     HttpClient httpClient = HttpClient.newBuilder().build();

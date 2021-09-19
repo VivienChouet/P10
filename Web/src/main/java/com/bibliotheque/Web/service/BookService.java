@@ -1,6 +1,7 @@
 package com.bibliotheque.Web.service;
 
 import com.bibliotheque.Web.Entity.Dto.BookDTO;
+import com.bibliotheque.Web.Entity.Dto.NewBookDTO;
 import com.bibliotheque.Web.utility.OperateurDiamant;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ OperateurDiamant operateurDiamant;
      * @param bookDTO
      * @throws JsonProcessingException
      */
-    public void newBook(BookDTO bookDTO) throws JsonProcessingException {
+    public void newBook(NewBookDTO bookDTO) throws JsonProcessingException {
         String json = (String) operateurDiamant.jsonConvert(bookDTO);
         operateurDiamant.post("http://localhost:8080/book/", json);
     }

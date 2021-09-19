@@ -1,5 +1,6 @@
 package com.bibliotheque.Web.Controller;
 
+import com.bibliotheque.Web.Entity.Dto.MyReservationDTO;
 import com.bibliotheque.Web.Entity.Dto.ReservationDTO;
 import com.bibliotheque.Web.service.ReservationService;
 import com.bibliotheque.Web.service.UserService;
@@ -23,9 +24,9 @@ public class ReservationController {
     UserService userService;
 
     @RequestMapping("/edition")
-    public ModelAndView newReservation(@RequestParam (name ="edition") String edition,@RequestParam (name = "id") Integer bookId, Model model) throws JsonProcessingException {
-        System.out.println("Controller edition = " + edition + " BookId = " + bookId );
-        reservationService.newReservation(edition, bookId);
+    public ModelAndView newReservation(@RequestParam (name ="edition") int edition, Model model) throws JsonProcessingException {
+
+        reservationService.newReservation(edition);
         boolean connected = this.userService.connected();
         boolean admin = this.userService.admin();
         model.addAttribute("connected", connected);
@@ -35,8 +36,8 @@ public class ReservationController {
 
     @GetMapping("/myreservation")
     public String myReservation(Model model) throws JsonProcessingException {
-        List<ReservationDTO> reservations = this.reservationService.reservationByUser();
-        model.addAttribute("reservations", reservations);
+        List<MyReservationDTO> myReservationDTOS = this.reservationService.reservationByUser();
+        model.addAttribute("reservations", myReservationDTOS);
         boolean connected = this.userService.connected();
         boolean admin = this.userService.admin();
         model.addAttribute("connected", connected);
@@ -46,7 +47,7 @@ public class ReservationController {
 
     @PostMapping("/extension/{id}")
     public ModelAndView extension (@PathVariable int id, Model model){
-reservationService.extension(id);
+        reservationService.extension(id);
         return new ModelAndView("redirect:/");
     }
 
@@ -69,5 +70,15 @@ reservationService.extension(id);
         return new ModelAndView("redirect:/");
     }
 
+    @RequestMapping("/attente")
+    public ModelAndView newAttente(@RequestParam (name ="edition") int edition, Model model) throws JsonProcessingException {
+
+        reservationService.newAttente(edition);
+        boolean connected = this.userService.connected();
+        boolean admin = this.userService.admin();
+        model.addAttribute("connected", connected);
+        model.addAttribute("admin", admin);
+        return new ModelAndView("redirect:/");
+    }
 
 }

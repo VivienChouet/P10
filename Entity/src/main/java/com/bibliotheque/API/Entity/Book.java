@@ -12,7 +12,9 @@ import java.util.Date;
 public class Book {
 
    @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
+
     public String title;
     public String author;
     public Date publication;

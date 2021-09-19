@@ -4,27 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="DEBUG : Lombok Does not work with IntelliJ EAP 2020.3">
-      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-08-30.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewAttenteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewEditionDTO.java" afterDir="false" />
+    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="Refonte total des reservations et mise en place des attentes.">
+      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-09-01.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-09-08.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-09-10.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-09-17.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/AttenteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/EditionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/ReaderAttente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/WriterAttente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/EditionWithNumberOfExemplaireDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/MyReservationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewBookDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/AttenteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/EditionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/EditionWithNumberOfExemplaireDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/MyReservationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewAttenteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewBookDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/AttenteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/admin/gestion-attente.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" beforeDir="false" afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/BatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/BatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/ReaderReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/ReaderAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/ReaderAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/WriterReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/AttenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/AttenteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/EditionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/EditionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ReservationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewAttenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewAttenteDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/EditionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/EditionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/ReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/BookDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ExemplaireNumberDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewExemplaireDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ReservationResearchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ReservationResearchDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ExemplaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/admin/gestion-reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/admin/gestion-reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/book/id.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/book/id.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/exemplaire/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/exemplaire/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/fragment/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/fragment/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/reservation/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/reservation/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/reservation/myReservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/reservation/myReservation.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +79,7 @@
       <list>
         <option value="JpaRepository" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -71,9 +115,9 @@
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Inspector" value="false" />
         <entry key="JPA Palette" value="true" />
-        <entry key="JPA Structure" value="true" />
+        <entry key="JPA Structure" value="false" />
       </map>
     </option>
   </component>
@@ -92,6 +136,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -127,7 +172,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EntityApplication">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -192,7 +237,17 @@
       <workItem from="1630163608191" duration="1212000" />
       <workItem from="1630239113047" duration="1617000" />
       <workItem from="1630330521764" duration="1154000" />
-      <workItem from="1630496892672" duration="9196000" />
+      <workItem from="1630496892672" duration="9781000" />
+      <workItem from="1630577521661" duration="3638000" />
+      <workItem from="1630931198050" duration="3936000" />
+      <workItem from="1631091429929" duration="10996000" />
+      <workItem from="1631177532261" duration="6896000" />
+      <workItem from="1631277546443" duration="2466000" />
+      <workItem from="1631711789042" duration="9209000" />
+      <workItem from="1631886978941" duration="2368000" />
+      <workItem from="1631889429623" duration="5293000" />
+      <workItem from="1631971486610" duration="14562000" />
+      <workItem from="1632044785009" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit / push">
       <created>1627383616785</created>
@@ -271,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629364138955</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refonte total des reservations et mise en place des attentes.">
+      <created>1630511775442</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1630511775442</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +380,8 @@
     <MESSAGE value="- Ajout de la methode permettant d'avoir la date du prochain retour.&#10;Bug de réservation : &#10;- Si il y a 2 ou plus d'exemplaires d'une même edition la reservation se fait uniquement sur la premiere entrée et cela ajoute plusieurs fois la même reservation d'un exemplairId unique." />
     <MESSAGE value="- Supression du Bug de reservation et traitement ramener sur le Back" />
     <MESSAGE value="- Ajout des methode d'update du nombre d'exemplaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Ajout des methode d'update du nombre d'exemplaire" />
+    <MESSAGE value="Refonte total des reservations et mise en place des attentes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refonte total des reservations et mise en place des attentes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,7 @@
 package com.bibliotheque.API.Controller;
 
 
+import com.bibliotheque.API.Entity.Dto.EditionWithNumberOfExemplaireDTO;
 import com.bibliotheque.API.Entity.Dto.ExemplaireDTO;
 import com.bibliotheque.API.Entity.Dto.NewExemplaireDTO;
 import com.bibliotheque.API.Entity.Dto.ReservationResearchDTO;
@@ -65,12 +66,12 @@ public class ExemplaireController {
     }
 */
     @GetMapping("/book/available/{id}")
-    public ResponseEntity<List<ExemplaireDTO>> listExemplaireByBookId (@PathVariable int id){
-        List<Exemplaire> exemplaires = this.exemplaireService.findByBook_idAndAvailable(id);
-        if (exemplaires == null){
+    public ResponseEntity<List<EditionWithNumberOfExemplaireDTO>> listExemplaireByBookId (@PathVariable int id){
+        List<EditionWithNumberOfExemplaireDTO> editions = this.exemplaireService.editionWithAllNumber(id);
+        if (editions == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(exemplaireMapper.toDto(exemplaires), HttpStatus.OK);
+        return new ResponseEntity<>(editions, HttpStatus.OK);
     }
 
 

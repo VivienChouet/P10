@@ -19,18 +19,18 @@
                         </tr>
                     </thread>
                     <tbody>
-                    <tr th:each="reservation : ${reservations}">
-                        <td th:text="${reservation.getUser().getName()}"></td>
-                        <td th:text="${reservation.getExemplaire().getEdition().getBook().getTitle()}"></td>
-                        <td th:text="${reservation.getExemplaire().getEdition().getName()}"></td>
-                        <td th:text="${reservation.getDate_fin()}"></td>
-                        <td th:if="${reservation.isEnded()} == false">
-                            <form method="post" th:action="@{/admin/reservation/{id}(id=${reservation.getId()})}">
-                                <button class="btn btn-primary btn-block btn-flat" type="submit">livre rendu
+                    <tr th:each="attente : ${attentes}">
+                        <td th:text="${attente.getUser().getName()}"></td>
+                        <td th:text="${attente.getEdition().getBook().getTitle()}"></td>
+                        <td th:text="${attente.getEdition().getName()}"></td>
+                        <td th:text="${attente.getDateMail()}"></td>
+                        <td >
+                            <form method="post" th:action="@{/admin/attente/{id}(id=${attente.getId()})}">
+                                <button class="btn btn-primary btn-block btn-flat" type="submit">livre récupéré
                                 </button>
                             </form>
                         </td>
-                        </tr>
+                    </tr>
                     </tbody>
                 </table>
             </div>

@@ -6,9 +6,8 @@ import lombok.Data;
 @Data
 public class ExemplaireDTO {
 
-    public int id;
-    public String edition;
-    public BookDTO book;
+    private int id;
     public boolean available;
-    public int number;
+    private EditionDTO edition;
+
 }

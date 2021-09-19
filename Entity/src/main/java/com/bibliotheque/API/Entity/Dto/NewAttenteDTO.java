@@ -1,5 +1,8 @@
 package com.bibliotheque.API.Entity.Dto;
 
+import lombok.Data;
+
+@Data
 public class NewAttenteDTO {
 
     public int user;
