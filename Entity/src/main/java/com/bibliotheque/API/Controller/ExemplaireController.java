@@ -47,9 +47,9 @@ public class ExemplaireController {
         return new ResponseEntity<>(exemplaireMapper.toDto(exemplaire), HttpStatus.OK);
     }
 
-@PostMapping("/")
-    public  ResponseEntity<ExemplaireDTO> newExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){
-        exemplaireService.save(newExemplaireDTO);
+    @PostMapping("/{id}")
+    public  ResponseEntity<ExemplaireDTO> newExemplaire (@PathVariable int id){
+        exemplaireService.save(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

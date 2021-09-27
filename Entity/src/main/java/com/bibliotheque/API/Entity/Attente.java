@@ -16,6 +16,7 @@ public class Attente {
     public Date dateMail;
     public Boolean mail;
 
+
     @JoinColumn(nullable = false)
     @ManyToOne(optional = false)
     private User user;

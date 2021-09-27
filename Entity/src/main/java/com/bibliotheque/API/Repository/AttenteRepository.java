@@ -19,5 +19,7 @@ public interface AttenteRepository extends JpaRepository<Attente, Integer> {
 
     List<Attente> findAttenteByDateMailNotNull();
 
+    List<Attente> findByEdition_IdAndMail(int edition_id, boolean mail);
+
 
 }

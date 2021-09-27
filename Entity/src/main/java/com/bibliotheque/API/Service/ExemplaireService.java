@@ -57,14 +57,14 @@ public class ExemplaireService {
     /**
      * Save
      *
-     * @param newExemplaireDTO
+
      */
 
 
- public void save(NewExemplaireDTO newExemplaireDTO) {
+ public void save(int id) {
         logger.info("save new exemplaire = ");
         Exemplaire exemplaire = new Exemplaire();
-        Edition edition = this.editionRepository.findById(newExemplaireDTO.getEdition()).get();
+        Edition edition = this.editionRepository.findById(id).get();
         exemplaire.setAvailable(true);
         exemplaire.setEdition(edition);
         exemplaireRepository.save(exemplaire);
@@ -78,17 +78,6 @@ public class ExemplaireService {
         logger.info("delete = " + id);
         Exemplaire exemplaire = this.exemplaireRepository.findById(id);
         exemplaireRepository.delete(exemplaire);
-    }
-
-    /**
-     * find Exemplaire By Book_id
-     * @param id
-     * @return List<Exemplaire>
-     */
-    public List<Exemplaire> findByBook_idAndAvailable(int id) {
-        logger.info("find Exemplaire by Book Id = " + id);
-        List<Exemplaire> exemplaires = this.exemplaireRepository.findByEdition_IdAndAvailable(id, true);
-        return exemplaires;
     }
 
 
@@ -116,7 +105,7 @@ public class ExemplaireService {
         for (Edition edition: editions) {
             List<Exemplaire> exemplaires = this.findByEdition_id(edition.id);
             int exemplaireTotal = exemplaires.size();
-            List<Exemplaire> exemplaires1 = this.findByBook_idAndAvailable(id);
+            List<Exemplaire> exemplaires1 = this.exemplaireRepository.findByEdition_IdAndAvailable(edition.id, true);
             int reservationAvailable = exemplaires1.size();
             int attenteAvailable = attenteService.numberAttenteAvailable(edition.id);
            EditionWithNumberOfExemplaireDTO numberOfExemplaireDTO = new EditionWithNumberOfExemplaireDTO();
@@ -131,6 +120,8 @@ public class ExemplaireService {
         logger.info("Book id " + id + " = " + editionWithNumberOfExemplaireDTOS );
         return editionWithNumberOfExemplaireDTOS;
     }
+
+
 
 }
 

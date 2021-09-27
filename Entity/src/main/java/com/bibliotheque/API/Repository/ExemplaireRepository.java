@@ -18,4 +18,5 @@ public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer>
 
     List<Exemplaire> findByEdition_Id(int id);
 
+
 }

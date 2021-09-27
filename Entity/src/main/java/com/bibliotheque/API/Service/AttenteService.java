@@ -1,7 +1,6 @@
 package com.bibliotheque.API.Service;
 
 import com.bibliotheque.API.Entity.*;
-import com.bibliotheque.API.Entity.Dto.AttenteDTO;
 import com.bibliotheque.API.Entity.Dto.NewAttenteDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Repository.*;
@@ -46,14 +45,15 @@ public class AttenteService {
 
 
     public void newAttente(NewAttenteDTO newAttenteDTO) {
-        List<Reservation> reservations = this.reservationRepository.findByUser_IdAndExemplaire_Edition_Id(newAttenteDTO.user,newAttenteDTO.edition);
+        List<Reservation> reservations = this.reservationRepository.findByUser_IdAndExemplaire_Edition_IdAndEnded(newAttenteDTO.user, newAttenteDTO.edition, false);
         List<Attente> attentes = this.attenteRepository.findByEdition_IdAndUser_Id(newAttenteDTO.edition, newAttenteDTO.user);
-            if (attentePossible(newAttenteDTO.edition) && reservations.size()== 0 && attentes.size()==0) {
+        if (attentePossible(newAttenteDTO.edition) && reservations.size() == 0 && attentes.size() == 0) {
             User user = this.userRepository.findById(newAttenteDTO.user).get();
             Edition edition = this.editionRepository.findById(newAttenteDTO.edition).get();
             Attente attente = new Attente();
             attente.setUser(user);
             attente.setEdition(edition);
+            attente.setMail(false);
             attenteRepository.save(attente);
             logger.info("new attente créer");
         }
@@ -104,16 +104,19 @@ public class AttenteService {
      *
      */
     public void attenteToReservation(int edition_id) throws Exception {
-        Attente attente = this.attenteRepository.findByEditionId(edition_id).get(0);
-        sendmail(attente);
-        updateReservation(attente);
+        List<Attente> attentes = this.attenteRepository.findByEdition_IdAndMail(edition_id, false);
+        if (attentes.size()!=0){
+            Attente attente = attentes.get(0);
+            sendmail(attente);
+            updateReservation(attente);
+        }
     }
 
 /*
 Si Le livre est récupérer
  */
 
-    public void AttenteAccepter(int id){
+    public void AttenteAccepter(int id) {
         deleteAttente(id);
     }
 
@@ -122,7 +125,7 @@ Si Le livre est récupérer
 Si le livre n'est pas récuperer Fonction BATCH
 */
 
-    public List<Attente> attenteBatch (){
+    public List<Attente> attenteBatch() {
         List<Attente> attentes = new ArrayList<>();
         Date date = new Date();
         DateTime dn = new DateTime(date);
@@ -130,19 +133,19 @@ Si le livre n'est pas récuperer Fonction BATCH
         Date dateFin = date_fin.toDate();
         int comparaison = 0;
         List<Attente> attenteListAll = this.attenteRepository.findAll();
-        for (int i = 0; attenteListAll.size() > i ; i++){
+        for (int i = 0; attenteListAll.size() > i; i++) {
             comparaison = attenteListAll.get(i).dateMail.compareTo(dateFin);
-            if(comparaison < 0){
+            if (comparaison < 0) {
                 attentes.add(attenteListAll.get(i));
-               }
             }
+        }
         System.out.println("Liste des attentes en retard =  " + attentes);
         return attentes;
     }
 
     public void attenteNonRecuperer(int id) throws Exception {
         Attente attente = attenteRepository.findById(id).get();
-        int id_Reservation = this.reservationRepository.findByUser_IdAndExemplaire_Edition_Id(attente.getUser().getId(),attente.getEdition().getId()).get(0).getId();
+        int id_Reservation = this.reservationRepository.findByUser_IdAndExemplaire_Edition_Id(attente.getUser().getId(), attente.getEdition().getId()).get(0).getId();
         reservationService.endReservation(id_Reservation);
         deleteAttente(id);
     }
@@ -177,6 +180,7 @@ Methode Logique Attente
     public void updateReservation(Attente attente) {
         Date date = new Date();
         attente.setDateMail(date);
+        attente.setMail(true);
         attenteRepository.save(attente);
         NewReservationDTO newReservationDTO = new NewReservationDTO();
         newReservationDTO.setEdition(attente.getEdition().id);

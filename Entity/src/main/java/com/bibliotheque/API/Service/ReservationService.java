@@ -77,7 +77,6 @@ public class ReservationService {
      */
     public void save(NewReservationDTO newReservationDTO) {
         logger.info("new reservation = " + newReservationDTO);
-
         Reservation reservation = new Reservation();
         reservation.setDate_debut(new Date());
         reservation.setDate_fin(endReservationDate(new Date()));
@@ -114,6 +113,11 @@ public class ReservationService {
     public void extension(int id) {
         logger.info("Update Started");
         Reservation reservation = reservationRepository.findById(id).get();
+        Date dateDay = new Date();
+        if(reservation.date_fin.after(dateDay)){
+            reservation.setExtension(true);
+            reservationRepository.save(reservation);
+        }
         Date date = reservation.getDate_fin();
         reservation.setDate_fin(endReservationDate(date));
         reservation.setExtension(true);
@@ -149,7 +153,7 @@ public class ReservationService {
         exemplaireRepository.save(exemplaire);
         List<Attente> attentes = attenteService.findByEdition_Id(reservation.getExemplaire().getEdition().id);
         if (attentes.size() != 0) {
-            attenteService.attenteToReservation(reservation.getExemplaire().getId());
+            attenteService.attenteToReservation(reservation.getExemplaire().getEdition().getId());
         }
     }
 
