@@ -33,6 +33,7 @@ public class ReservationService {
         NewReservationDTO newReservationDTO = new NewReservationDTO();
         newReservationDTO.setEdition(edition);
         newReservationDTO.setUser(userDTO.getId());
+        newReservationDTO.setAttente(false);
         String json = (String) operateurDiamant.jsonConvert(newReservationDTO);
         operateurDiamant.post("http://localhost:8080/reservation/", json);
         logger.info("New Reservation :  " + newReservationDTO);

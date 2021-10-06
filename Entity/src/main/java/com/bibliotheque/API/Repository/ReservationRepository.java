@@ -15,6 +15,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
 
     List<Reservation> findByEndedAndBatch(boolean ended,boolean batch);
 
+    List<Reservation> findByAttente(boolean attente);
 
     List<Reservation> findByUser_IdAndExemplaire_Edition_IdAndEnded(int user, int edition, boolean ended);
 

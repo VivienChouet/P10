@@ -117,6 +117,7 @@ Si Le livre est récupérer
  */
 
     public void AttenteAccepter(int id) {
+        reservationService.attenteRecuperer(id);
         deleteAttente(id);
     }
 
@@ -131,14 +132,19 @@ Si le livre n'est pas récuperer Fonction BATCH
         DateTime dn = new DateTime(date);
         DateTime date_fin = dn.minusHours(48);
         Date dateFin = date_fin.toDate();
-        int comparaison = 0;
         List<Attente> attenteListAll = this.attenteRepository.findAll();
-        for (int i = 0; attenteListAll.size() > i; i++) {
-            comparaison = attenteListAll.get(i).dateMail.compareTo(dateFin);
-            if (comparaison < 0) {
-                attentes.add(attenteListAll.get(i));
+        for (Attente attente: attenteListAll) {
+            System.out.println("Attente avant le if : " + attente) ;
+            if (attente.dateMail != null) {
+
+
+                if (attente.dateMail.before(dateFin)) {
+                    System.out.println("attente : " + attente);
+                    attentes.add(attente);
+                }
             }
         }
+
         System.out.println("Liste des attentes en retard =  " + attentes);
         return attentes;
     }
@@ -185,6 +191,7 @@ Methode Logique Attente
         NewReservationDTO newReservationDTO = new NewReservationDTO();
         newReservationDTO.setEdition(attente.getEdition().id);
         newReservationDTO.setUser(attente.getUser().getId());
+        newReservationDTO.setAttente(true);
         reservationService.save(newReservationDTO);
         logger.info("update reservation suite attente id = " + attente.id);
     }
@@ -201,5 +208,9 @@ Methode Logique Attente
         List<Attente> attentes = this.attenteRepository.findAttenteByDateMailNotNull();
         logger.info("list de toutes les attentes a récuperer : " + attentes.size());
         return attentes;
+    }
+
+    public Attente findById(int id) {
+           return attenteRepository.findById(id).get();
     }
 }

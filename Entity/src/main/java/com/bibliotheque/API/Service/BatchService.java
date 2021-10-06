@@ -55,6 +55,7 @@ public class BatchService {
     public void update(Reservation reservation) {
         logger.info("update reservation id : " + reservation.id + " batch done");
         reservation.setBatch(true);
+        reservation.setExtension(true);
         reservationRepository.save(reservation);
     }
 }

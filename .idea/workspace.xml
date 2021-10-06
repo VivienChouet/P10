@@ -5,34 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="Refonte total des reservations et mise en place des attentes.">
-      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-09-19.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-09-21.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`).2021-09-22.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/EditionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewEditionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/EditionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" beforeDir="false" afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/ExemplaireDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/ReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/ReservationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/DTO/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Batch/src/main/java/com/bibliotheque/batch/Service/Processor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/ExemplaireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Attente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/AttenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ExemplaireRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/AttenteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Repository/ReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/AttenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ExemplaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/BatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/BatchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Service/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/ExemplaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Controller/ExemplaireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewExemplaireDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ExemplaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/NewReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/Entity/Dto/ReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/com/bibliotheque/Web/service/ReservationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/book/id.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/book/id.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/book/ide.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/book/ide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/templates/exemplaire/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/templates/edition/new.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +125,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BatchApplication">
+  <component name="RunManager" selected="Spring Boot.EntityApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -171,6 +158,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.BatchApplication" />
+      <item itemvalue="Spring Boot.EntityApplication" />
+      <item itemvalue="Spring Boot.WebApplication" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -216,7 +208,10 @@
       <workItem from="1632044785009" duration="5150000" />
       <workItem from="1632231639823" duration="3217000" />
       <workItem from="1632294923272" duration="9068000" />
-      <workItem from="1632742759185" duration="5627000" />
+      <workItem from="1632742759185" duration="6083000" />
+      <workItem from="1632900071477" duration="6918000" />
+      <workItem from="1633359919936" duration="5680000" />
+      <workItem from="1633435527239" duration="2721000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit / push">
       <created>1627383616785</created>
@@ -309,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632045512372</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Refonte total des reservations et mise en place des attentes.">
+      <created>1632749861743</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1632749861744</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

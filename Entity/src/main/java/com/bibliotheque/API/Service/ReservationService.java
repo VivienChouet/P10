@@ -44,7 +44,7 @@ public class ReservationService {
      * @return List<Reservation>
      */
     public List<Reservation> findAll() {
-        List<Reservation> reservations = this.reservationRepository.findAll();
+        List<Reservation> reservations = this.reservationRepository.findByAttente(false);
         return reservations;
     }
 
@@ -84,6 +84,7 @@ public class ReservationService {
         reservation.setEnded(false);
         reservation.setExtension(false);
         reservation.setExemplaire(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition, true).get(0));
+        reservation.setAttente(newReservationDTO.isAttente());
         reservationRepository.save(reservation);
         exemplaireService.reservation(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition, true).get(0));
 
@@ -172,5 +173,14 @@ List<MyReservationDTO> myReservationDTOS = new ArrayList<>();
             myReservationDTOS.add(myReservationDTO);
         }
         return myReservationDTOS;
+    }
+
+
+    public void attenteRecuperer(int id) {
+        Reservation reservation = new Reservation();
+        Attente attente = new Attente();
+        attente = this.attenteService.findById(id);
+        reservation = this.reservationRepository.findByUser_IdAndExemplaire_Edition_Id(attente.getUser().getId(), attente.id).get(0);
+
     }
 }

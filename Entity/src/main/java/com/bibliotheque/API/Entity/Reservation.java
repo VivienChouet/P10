@@ -18,6 +18,7 @@ public class Reservation {
     public boolean ended;
     public boolean extension;
     private boolean batch;
+    private boolean attente;
 
     @ManyToOne
     private User user;

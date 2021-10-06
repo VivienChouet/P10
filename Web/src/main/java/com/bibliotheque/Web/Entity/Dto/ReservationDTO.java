@@ -13,6 +13,7 @@ public class ReservationDTO {
     private boolean ended;
     private boolean extension;
     private boolean batch;
+    private boolean attente;
 
     private UserDTO user;
 
