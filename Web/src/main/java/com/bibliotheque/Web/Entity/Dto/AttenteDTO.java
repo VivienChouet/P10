@@ -11,6 +11,4 @@ public class AttenteDTO {
     public Boolean mail;
     public EditionDTO edition;
     private UserDTO user;
-
-
 }

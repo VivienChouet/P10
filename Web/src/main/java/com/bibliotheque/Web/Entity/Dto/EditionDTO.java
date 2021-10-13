@@ -6,8 +6,7 @@ import java.awt.print.Book;
 
 @Data
 public class EditionDTO {
-
     private int id;
-    private String name;
+    public String name;
     private BookDTO book;
 }

@@ -1,5 +1,4 @@
 package com.bibliotheque.API.Entity.Dto;
-
 import lombok.Data;
 
 import java.util.Date;
@@ -13,7 +12,8 @@ public class ReservationDTO {
     private boolean ended;
     private boolean extension;
     private boolean batch;
-    private boolean attente;
+    private boolean recuperer;
+    private AttenteDTO attente;
     private UserDTO user;
     private ExemplaireDTO exemplaire;
 

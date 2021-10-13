@@ -5,9 +5,7 @@ import lombok.Data;
 
 @Data
 public class ExemplaireDTO {
-
-    private int id;
+    public int id;
     public boolean available;
     private EditionDTO edition;
-
 }

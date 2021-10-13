@@ -17,8 +17,11 @@ public class Reservation {
     public Date date_fin;
     public boolean ended;
     public boolean extension;
+
     private boolean batch;
-    private boolean attente;
+    @OneToOne
+    private Attente attente;
+    public boolean recuperer;
 
     @ManyToOne
     private User user;

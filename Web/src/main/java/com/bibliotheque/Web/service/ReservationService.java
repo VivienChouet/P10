@@ -33,7 +33,6 @@ public class ReservationService {
         NewReservationDTO newReservationDTO = new NewReservationDTO();
         newReservationDTO.setEdition(edition);
         newReservationDTO.setUser(userDTO.getId());
-        newReservationDTO.setAttente(false);
         String json = (String) operateurDiamant.jsonConvert(newReservationDTO);
         operateurDiamant.post("http://localhost:8080/reservation/", json);
         logger.info("New Reservation :  " + newReservationDTO);
@@ -44,10 +43,10 @@ public class ReservationService {
      * @return List<ReservationDTO>
      * @throws JsonProcessingException
      */
-    public List<MyReservationDTO> reservationByUser() throws JsonProcessingException {
+    public List<ListReservationDTO> reservationByUser() throws JsonProcessingException {
         System.out.println("TOKEN = " + userService.token);
         HttpResponse response = operateurDiamant.RequestSecure("http://localhost:8080/reservation/myreservation", userService.token);
-        List<MyReservationDTO> myReservationDTOS = operateurDiamant.listObject(response, MyReservationDTO.class);
+        List<ListReservationDTO> myReservationDTOS = operateurDiamant.listObject(response, ListReservationDTO.class);
         return myReservationDTOS;
     }
 
@@ -86,10 +85,10 @@ public class ReservationService {
      * @return List<ReservationDTO>
      * @throws JsonProcessingException
      */
-    public List<ReservationDTO> listReservation() throws JsonProcessingException {
+    public List<ListReservationDTO> listReservation() throws JsonProcessingException {
         HttpResponse response = operateurDiamant.Request("http://localhost:8080/reservation/");
-        List<ReservationDTO> reservationDTOS = operateurDiamant.listObject(response, ReservationDTO.class);
-        return reservationDTOS;
+        List<ListReservationDTO> listReservationDTOS = operateurDiamant.listObject(response, ReservationDTO.class);
+        return listReservationDTOS;
     }
 
     public void newAttente(int edition) throws JsonProcessingException {

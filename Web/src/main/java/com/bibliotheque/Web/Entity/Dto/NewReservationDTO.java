@@ -10,7 +10,6 @@ public class NewReservationDTO {
 
     public int edition;
     public int user;
-    private boolean attente;
 
 }
 

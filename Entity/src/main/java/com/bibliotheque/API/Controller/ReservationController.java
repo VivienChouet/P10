@@ -3,7 +3,7 @@ package com.bibliotheque.API.Controller;
 
 
 import com.bibliotheque.API.Entity.Dto.DeleteReservationDTO;
-import com.bibliotheque.API.Entity.Dto.MyReservationDTO;
+import com.bibliotheque.API.Entity.Dto.ListReservationDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Entity.Dto.ReservationDTO;
 import com.bibliotheque.API.Entity.Mapper.ReservationMapper;
@@ -27,9 +27,9 @@ public class ReservationController {
     ReservationMapper reservationMapper;
 
     @GetMapping("/")
-    public ResponseEntity<List<ReservationDTO>> listReservation (){
-        List<Reservation> reservations = this.reservationService.findAll();
-        return new ResponseEntity<>(reservationMapper.toDto(reservations), HttpStatus.OK);
+    public ResponseEntity<List<ListReservationDTO>> listReservation (){
+        List<ListReservationDTO> listReservations = this.reservationService.findAll();
+        return new ResponseEntity<>(listReservations, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -66,9 +66,9 @@ public class ReservationController {
     }
 
     @GetMapping("/myreservation")
-    public ResponseEntity<List<MyReservationDTO>> reservationByUser (@RequestHeader("Authorization") String token){
-        List<MyReservationDTO> myReservationDTO = this.reservationService.myReservation(token);
-        return new ResponseEntity<>(myReservationDTO, HttpStatus.OK);
+    public ResponseEntity<List<ListReservationDTO>> reservationByUser (@RequestHeader("Authorization") String token){
+        List<ListReservationDTO> listReservationDTO = this.reservationService.myReservation(token);
+        return new ResponseEntity<>(listReservationDTO, HttpStatus.OK);
     }
 
     @PostMapping("/extension/{id}")

@@ -1,6 +1,7 @@
 package com.bibliotheque.Web.Controller;
 
-import com.bibliotheque.Web.Entity.Dto.MyReservationDTO;
+
+import com.bibliotheque.Web.Entity.Dto.ListReservationDTO;
 import com.bibliotheque.Web.Entity.Dto.ReservationDTO;
 import com.bibliotheque.Web.service.ReservationService;
 import com.bibliotheque.Web.service.UserService;
@@ -36,7 +37,7 @@ public class ReservationController {
 
     @GetMapping("/myreservation")
     public String myReservation(Model model) throws JsonProcessingException {
-        List<MyReservationDTO> myReservationDTOS = this.reservationService.reservationByUser();
+        List<ListReservationDTO> myReservationDTOS = this.reservationService.reservationByUser();
         model.addAttribute("reservations", myReservationDTOS);
         boolean connected = this.userService.connected();
         boolean admin = this.userService.admin();
@@ -64,7 +65,7 @@ public class ReservationController {
         model.addAttribute("connected", connected);
         model.addAttribute("admin", admin);
         if (userService.admin()){
-        List<ReservationDTO> reservationDTOS = this.reservationService.listReservation();
+        List<ListReservationDTO> reservationDTOS = this.reservationService.listReservation();
         model.addAttribute("reservations", reservationDTOS);
                 return "reservation/admin";}
         return new ModelAndView("redirect:/");

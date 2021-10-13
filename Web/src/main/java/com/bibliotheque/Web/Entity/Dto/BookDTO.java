@@ -9,10 +9,11 @@ import java.util.Date;
 @Data
 public class BookDTO {
 
-private int id;
+    private int id;
     private String title;
     private String author;
-    private String publication;
+    private Date publication;
     private String resume;
+
 
 }

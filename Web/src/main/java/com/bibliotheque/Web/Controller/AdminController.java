@@ -2,6 +2,7 @@ package com.bibliotheque.Web.Controller;
 
 
 import com.bibliotheque.Web.Entity.Dto.AttenteDTO;
+import com.bibliotheque.Web.Entity.Dto.ListReservationDTO;
 import com.bibliotheque.Web.Entity.Dto.ReservationDTO;
 import com.bibliotheque.Web.Entity.Dto.UserDTO;
 import com.bibliotheque.Web.service.AttenteService;
@@ -52,8 +53,8 @@ public class AdminController {
 
     @GetMapping("/reservation")
     public String reservationAdmin(Model model) throws JsonProcessingException {
-    List<ReservationDTO> reservationDTOS = this.reservationService.listReservation();
-    model.addAttribute("reservations", reservationDTOS);
+    List<ListReservationDTO> listReservationDTOS = this.reservationService.listReservation();
+    model.addAttribute("reservations", listReservationDTOS);
         boolean connected = this.userService.connected();
         boolean admin = this.userService.admin();
         model.addAttribute("connected", connected);

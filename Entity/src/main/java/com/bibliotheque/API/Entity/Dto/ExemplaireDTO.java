@@ -8,6 +8,6 @@ public class ExemplaireDTO {
 
     public int id;
     public boolean available;
-    private Edition edition;
+    private EditionDTO edition;
 
 }

@@ -15,15 +15,11 @@ public class Attente {
     public int id;
     public Date dateMail;
     public Boolean mail;
-
-
     @JoinColumn(nullable = false)
     @ManyToOne(optional = false)
     private User user;
     @ManyToOne
     private Edition edition;
-
-
 
 
 }

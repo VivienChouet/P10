@@ -33,8 +33,8 @@
                     </thread>
                     <tbody>
                     <tr th:each="reservation : ${reservations}">
-                        <td th:text="${reservation.getBook()}"></td>
-                        <td th:text="${reservation.getEdition()}"></td>
+                        <td th:text="${reservation.getExemplaire().getEdition().getBook().getTitle()}"></td>
+                        <td th:text="${reservation.getExemplaire().getEdition().getName()}"></td>
                         <td th:text="${reservation.getDate_debut()}"></td>
                         <td th:text="${reservation.getDate_fin()}"></td>
                         <td th:if="${reservation.getExtension()} == false">

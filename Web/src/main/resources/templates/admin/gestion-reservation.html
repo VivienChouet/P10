@@ -24,11 +24,17 @@
                         <td th:text="${reservation.getExemplaire().getEdition().getBook().getTitle()}"></td>
                         <td th:text="${reservation.getExemplaire().getEdition().getName()}"></td>
                         <td th:text="${reservation.getDate_fin()}"></td>
-                        <td th:if="${reservation.isEnded()} == false">
+                        <td th:if="${reservation.ended} == false and ${reservation.recuperer} == true">
                             <form method="post" th:action="@{/admin/reservation/{id}(id=${reservation.getId()})}">
                                 <button class="btn btn-primary btn-block btn-flat" type="submit">livre rendu
                                 </button>
                             </form>
+                        </td>
+                        <td th:if="${reservation.ended} == true">
+                            <p>Reservation terminé</p>
+                        </td>
+                        <td th:if="${reservation.recuperer} == false">
+                            <p>Livre à récuperer</p>
                         </td>
                         </tr>
                     </tbody>

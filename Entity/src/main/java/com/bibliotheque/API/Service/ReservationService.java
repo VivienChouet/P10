@@ -1,8 +1,10 @@
 package com.bibliotheque.API.Service;
 
 import com.bibliotheque.API.Entity.Attente;
-import com.bibliotheque.API.Entity.Dto.MyReservationDTO;
+import com.bibliotheque.API.Entity.Dto.ListReservationDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
+import com.bibliotheque.API.Entity.Dto.NewReservationWithAttente;
+import com.bibliotheque.API.Entity.Dto.ReservationDTO;
 import com.bibliotheque.API.Entity.Exemplaire;
 import com.bibliotheque.API.Entity.Reservation;
 import com.bibliotheque.API.Entity.User;
@@ -43,9 +45,34 @@ public class ReservationService {
      *
      * @return List<Reservation>
      */
-    public List<Reservation> findAll() {
-        List<Reservation> reservations = this.reservationRepository.findByAttente(false);
-        return reservations;
+    public List<ListReservationDTO> findAll() {
+        List<Reservation> reservations = this.reservationRepository.findAll();
+        List<ListReservationDTO> listReservationDTOS = créationDTO(reservations);
+        return listReservationDTOS;
+    }
+
+    public List<ListReservationDTO> myReservation(String token) {
+        List<Reservation> reservations = this.findByUser(token);
+        List<ListReservationDTO> listReservationDTOS = créationDTO(reservations);
+        return listReservationDTOS;
+    }
+
+    public List<ListReservationDTO> créationDTO(List<Reservation> reservations){
+        List<ListReservationDTO> listReservationDTOS = new ArrayList<>();
+        for (Reservation reservation : reservations) {
+            ListReservationDTO listReservationDTO = new ListReservationDTO();
+            listReservationDTO.setExemplaire(reservation.getExemplaire());
+            listReservationDTO.setUser(reservation.getUser());
+            listReservationDTO.setDate_debut(reservation.date_debut);
+            listReservationDTO.setExtension(reservation.extension);
+            listReservationDTO.setDate_fin(reservation.date_fin);
+            listReservationDTO.setId(reservation.id);
+            listReservationDTO.setEnded(reservation.ended);
+            listReservationDTO.setRecuperer(reservation.recuperer);
+            listReservationDTOS.add(listReservationDTO);
+
+        }
+        return listReservationDTOS;
     }
 
     /**
@@ -83,11 +110,25 @@ public class ReservationService {
         reservation.setUser(userRepository.findById(newReservationDTO.user).get());
         reservation.setEnded(false);
         reservation.setExtension(false);
+        reservation.setRecuperer(true);
         reservation.setExemplaire(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition, true).get(0));
-        reservation.setAttente(newReservationDTO.isAttente());
         reservationRepository.save(reservation);
         exemplaireService.reservation(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition, true).get(0));
+    }
 
+    public void saveWithAttente (NewReservationWithAttente newReservationWithAttente) {
+        logger.info("new reservation issue d'attente = " + newReservationWithAttente);
+        Reservation reservation = new Reservation();
+        reservation.setDate_debut(new Date());
+        reservation.setDate_fin(endReservationDate(new Date()));
+        reservation.setUser(userRepository.findById(newReservationWithAttente.user).get());
+        reservation.setEnded(false);
+        reservation.setExtension(false);
+        reservation.setExemplaire(exemplaireRepository.findByEdition_IdAndAvailable(newReservationWithAttente.edition, true).get(0));
+        reservation.setAttente(newReservationWithAttente.getAttente());
+        reservation.setRecuperer(newReservationWithAttente.isRecuperer());
+        reservationRepository.save(reservation);
+        exemplaireService.reservation(exemplaireRepository.findByEdition_IdAndAvailable(newReservationWithAttente.edition, true).get(0));
     }
 
 
@@ -159,21 +200,7 @@ public class ReservationService {
     }
 
 
-    public List<MyReservationDTO> myReservation(String token) {
-        List<Reservation> reservations = this.findByUser(token);
-List<MyReservationDTO> myReservationDTOS = new ArrayList<>();
-        for (Reservation reservation: reservations) {
-            MyReservationDTO myReservationDTO = new MyReservationDTO();
-            myReservationDTO.setBook(reservation.getExemplaire().getEdition().getBook().title);
-            myReservationDTO.setEdition(reservation.getExemplaire().getEdition().name);
-            myReservationDTO.setDate_debut(reservation.date_debut);
-            myReservationDTO.setExtension(reservation.extension);
-            myReservationDTO.setDate_fin(reservation.date_fin);
-            myReservationDTO.setId(reservation.id);
-            myReservationDTOS.add(myReservationDTO);
-        }
-        return myReservationDTOS;
-    }
+
 
 
     public void attenteRecuperer(int id) {

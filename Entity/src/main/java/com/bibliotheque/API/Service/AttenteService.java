@@ -3,6 +3,7 @@ package com.bibliotheque.API.Service;
 import com.bibliotheque.API.Entity.*;
 import com.bibliotheque.API.Entity.Dto.NewAttenteDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
+import com.bibliotheque.API.Entity.Dto.NewReservationWithAttente;
 import com.bibliotheque.API.Repository.*;
 import com.bibliotheque.API.Utility.LoggingController;
 import com.sendgrid.Method;
@@ -188,11 +189,12 @@ Methode Logique Attente
         attente.setDateMail(date);
         attente.setMail(true);
         attenteRepository.save(attente);
-        NewReservationDTO newReservationDTO = new NewReservationDTO();
-        newReservationDTO.setEdition(attente.getEdition().id);
-        newReservationDTO.setUser(attente.getUser().getId());
-        newReservationDTO.setAttente(true);
-        reservationService.save(newReservationDTO);
+        NewReservationWithAttente newReservationWithAttente = new NewReservationWithAttente();
+        newReservationWithAttente.setEdition(attente.getEdition().id);
+        newReservationWithAttente.setUser(attente.getUser().getId());
+        newReservationWithAttente.setAttente(attente);
+        newReservationWithAttente.setRecuperer(false);
+        reservationService.saveWithAttente(newReservationWithAttente);
         logger.info("update reservation suite attente id = " + attente.id);
     }
 
