@@ -14,4 +14,6 @@ public interface EditionRepository extends JpaRepository<Edition, Integer> {
 
     @Query("select e from Edition e where e.book.id = ?1")
     List<Edition> findByBook_Id(int id);
+
+    Edition findById(int id);
 }

@@ -21,7 +21,6 @@ public class ExemplaireController {
 
     @Autowired
     ExemplaireService exemplaireService;
-
     @Autowired
     ExemplaireMapper exemplaireMapper;
 
@@ -53,11 +52,18 @@ public class ExemplaireController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("/")
-    public ResponseEntity<ExemplaireDTO> deleteExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){
-        exemplaireService.delete(newExemplaireDTO.getId());
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ExemplaireDTO> deleteExemplaire (@PathVariable int id){
+        exemplaireService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/edition/{id}")
+    public ResponseEntity <List<ExemplaireDTO>> exemplaireByEditionId(@PathVariable int id){
+        List<Exemplaire>  exemplaires = this.exemplaireService.findByEdition_id(id);
+        return new ResponseEntity<>(exemplaireMapper.toDto(exemplaires),HttpStatus.OK);
+    }
+
 
  /*   @PutMapping("/")
     public ResponseEntity<ExemplaireDTO> updateExemplaire (@RequestBody NewExemplaireDTO newExemplaireDTO){

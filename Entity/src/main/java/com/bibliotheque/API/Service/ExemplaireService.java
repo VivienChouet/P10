@@ -64,7 +64,7 @@ public class ExemplaireService {
  public void save(int id) {
         logger.info("save new exemplaire = ");
         Exemplaire exemplaire = new Exemplaire();
-        Edition edition = this.editionRepository.findById(id).get();
+        Edition edition = this.editionRepository.findById(id);
         exemplaire.setAvailable(true);
         exemplaire.setEdition(edition);
         exemplaireRepository.save(exemplaire);
@@ -92,10 +92,11 @@ public class ExemplaireService {
         return exemplaires;
     }
 
-    public void reservation(Exemplaire exemplaire) {
+    public Exemplaire reservation(Exemplaire exemplaire) {
         logger.info("exemplaire id " + exemplaire.id + " reserved");
         exemplaire.setAvailable(false);
         exemplaireRepository.save(exemplaire);
+        return exemplaire;
     }
 
     public List<EditionWithNumberOfExemplaireDTO> editionWithAllNumber(int id) {

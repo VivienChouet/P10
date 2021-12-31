@@ -21,5 +21,5 @@ public interface AttenteRepository extends JpaRepository<Attente, Integer> {
 
     List<Attente> findByEdition_IdAndMail(int edition_id, boolean mail);
 
-
+    List<Attente> findByUserId(int id);
 }

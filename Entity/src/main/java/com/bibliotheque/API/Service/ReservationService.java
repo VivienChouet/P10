@@ -70,7 +70,6 @@ public class ReservationService {
             listReservationDTO.setEnded(reservation.ended);
             listReservationDTO.setRecuperer(reservation.recuperer);
             listReservationDTOS.add(listReservationDTO);
-
         }
         return listReservationDTOS;
     }
@@ -102,26 +101,27 @@ public class ReservationService {
      *
      * @param newReservationDTO
      */
-    public void save(NewReservationDTO newReservationDTO) {
+    public Reservation save(NewReservationDTO newReservationDTO) {
         logger.info("new reservation = " + newReservationDTO);
         Reservation reservation = new Reservation();
         reservation.setDate_debut(new Date());
         reservation.setDate_fin(endReservationDate(new Date()));
-        reservation.setUser(userRepository.findById(newReservationDTO.user).get());
+        reservation.setUser(userRepository.findById(newReservationDTO.user));
         reservation.setEnded(false);
         reservation.setExtension(false);
         reservation.setRecuperer(true);
         reservation.setExemplaire(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition, true).get(0));
         reservationRepository.save(reservation);
         exemplaireService.reservation(exemplaireRepository.findByEdition_IdAndAvailable(newReservationDTO.edition, true).get(0));
+        return reservation;
     }
 
-    public void saveWithAttente (NewReservationWithAttente newReservationWithAttente) {
+    public Reservation saveWithAttente (NewReservationWithAttente newReservationWithAttente) {
         logger.info("new reservation issue d'attente = " + newReservationWithAttente);
         Reservation reservation = new Reservation();
         reservation.setDate_debut(new Date());
         reservation.setDate_fin(endReservationDate(new Date()));
-        reservation.setUser(userRepository.findById(newReservationWithAttente.user).get());
+        reservation.setUser(userRepository.findById(newReservationWithAttente.user));
         reservation.setEnded(false);
         reservation.setExtension(false);
         reservation.setExemplaire(exemplaireRepository.findByEdition_IdAndAvailable(newReservationWithAttente.edition, true).get(0));
@@ -129,6 +129,7 @@ public class ReservationService {
         reservation.setRecuperer(newReservationWithAttente.isRecuperer());
         reservationRepository.save(reservation);
         exemplaireService.reservation(exemplaireRepository.findByEdition_IdAndAvailable(newReservationWithAttente.edition, true).get(0));
+        return reservation;
     }
 
 
@@ -152,18 +153,20 @@ public class ReservationService {
      *
      * @param id
      */
-    public void extension(int id) {
+    public boolean extension(int id) {
         logger.info("Update Started");
         Reservation reservation = reservationRepository.findById(id).get();
         Date dateDay = new Date();
         if(reservation.date_fin.after(dateDay)){
             reservation.setExtension(true);
             reservationRepository.save(reservation);
+            return true;
         }
         Date date = reservation.getDate_fin();
         reservation.setDate_fin(endReservationDate(date));
         reservation.setExtension(true);
         reservationRepository.save(reservation);
+        return false;
     }
 
     /**
@@ -199,15 +202,12 @@ public class ReservationService {
         }
     }
 
-
-
-
-
     public void attenteRecuperer(int id) {
-        Reservation reservation = new Reservation();
-        Attente attente = new Attente();
-        attente = this.attenteService.findById(id);
-        reservation = this.reservationRepository.findByUser_IdAndExemplaire_Edition_Id(attente.getUser().getId(), attente.id).get(0);
+        Reservation reservation = this.reservationRepository.findByAttenteId(id);
+        reservation.setRecuperer(true);
+        reservation.setAttente(null);
+        reservationRepository.save(reservation);
+        attenteService.deleteAttente(id);
 
     }
 }

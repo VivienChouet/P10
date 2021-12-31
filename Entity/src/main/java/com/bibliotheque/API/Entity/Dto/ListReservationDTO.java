@@ -1,12 +1,13 @@
 package com.bibliotheque.API.Entity.Dto;
 import com.bibliotheque.API.Entity.Exemplaire;
 import com.bibliotheque.API.Entity.User;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
 public class ListReservationDTO {
 
     private User user;

@@ -18,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,20 +44,22 @@ public class AttenteService {
     Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
 
-    public void newAttente(NewAttenteDTO newAttenteDTO) {
+    public Attente newAttente(NewAttenteDTO newAttenteDTO) {
         List<Reservation> reservations = this.reservationRepository.findByUser_IdAndExemplaire_Edition_IdAndEnded(newAttenteDTO.user, newAttenteDTO.edition, false);
         List<Attente> attentes = this.attenteRepository.findByEdition_IdAndUser_Id(newAttenteDTO.edition, newAttenteDTO.user);
-        if (attentePossible(newAttenteDTO.edition) && reservations.size() == 0 && attentes.size() == 0) {
-            User user = this.userRepository.findById(newAttenteDTO.user).get();
-            Edition edition = this.editionRepository.findById(newAttenteDTO.edition).get();
+        if (attentePossible(newAttenteDTO.edition)) {
+            User user = this.userRepository.findById(newAttenteDTO.user);
+            Edition edition = this.editionRepository.findById(newAttenteDTO.edition);
             Attente attente = new Attente();
             attente.setUser(user);
             attente.setEdition(edition);
             attente.setMail(false);
             attenteRepository.save(attente);
             logger.info("new attente créer");
+            return attente;
         }
         logger.info("new attente impossible");
+        return null;
     }
 
     public Integer attenteNumberMax(int edition_id) {
@@ -92,9 +93,9 @@ public class AttenteService {
     }
 
     public void deleteAttente(int id) {
+        logger.info("suppression attente id = " + id);
         Attente attente = this.attenteRepository.findById(id).get();
         attenteRepository.delete(attente);
-        logger.info("suppression attente id = " + id);
     }
 
     /*
@@ -137,7 +138,6 @@ Si le livre n'est pas récuperer Fonction BATCH
         for (Attente attente: attenteListAll) {
             System.out.println("Attente avant le if : " + attente) ;
             if (attente.dateMail != null) {
-
 
                 if (attente.dateMail.before(dateFin)) {
                     System.out.println("attente : " + attente);
@@ -184,7 +184,7 @@ Methode Logique Attente
         }
     }
 
-    public void updateReservation(Attente attente) {
+    public Attente updateReservation(Attente attente) {
         Date date = new Date();
         attente.setDateMail(date);
         attente.setMail(true);
@@ -196,6 +196,7 @@ Methode Logique Attente
         newReservationWithAttente.setRecuperer(false);
         reservationService.saveWithAttente(newReservationWithAttente);
         logger.info("update reservation suite attente id = " + attente.id);
+        return attente;
     }
 
 
@@ -214,5 +215,9 @@ Methode Logique Attente
 
     public Attente findById(int id) {
            return attenteRepository.findById(id).get();
+    }
+
+    public Attente findByUserId(int id) {
+        return attenteRepository.findByUserId(id).get(0);
     }
 }

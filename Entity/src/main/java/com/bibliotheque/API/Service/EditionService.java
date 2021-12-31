@@ -39,14 +39,14 @@ public class EditionService {
 
     public void delete (int id){
         logger.info("delete edition id : " + id);
-        Edition edition = this.editionRepository.findById(id).get();
+        Edition edition = this.editionRepository.findById(id);
         editionRepository.delete(edition);
     }
 
     public void countNumberOfExemplaire(int id){
     logger.info("count number of exemplaire on edition id : " + id);
     List<Exemplaire> exemplaires =  exemplaireService.findByEdition_id(id);
-    Edition edition = editionRepository.findById(id).get();
+    Edition edition = editionRepository.findById(id);
     int number = exemplaires.size();
     }
 

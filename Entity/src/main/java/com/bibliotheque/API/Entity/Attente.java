@@ -1,6 +1,6 @@
 package com.bibliotheque.API.Entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;

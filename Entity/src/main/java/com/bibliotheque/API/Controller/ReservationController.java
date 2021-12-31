@@ -59,9 +59,9 @@ public class ReservationController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("/")
-    public ResponseEntity<ReservationDTO> deleteReservation (@RequestBody DeleteReservationDTO deleteReservationDTO){
-        reservationService.delete(deleteReservationDTO.getId());
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ReservationDTO> deleteReservation (@PathVariable int id){
+        reservationService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -46,15 +46,15 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/")
-    public ResponseEntity<UserDTO> updateUser(@RequestBody UserDTO userDTO) {
-        userService.save((userMapper.toEntity(userDTO)));
-        return new ResponseEntity<>(HttpStatus.OK);
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDTO> updateUser(@PathVariable int id, @RequestBody UserDTO userDTO) {
+        User user = this.userService.update(id, userDTO);
+        return new ResponseEntity<>(userMapper.toDto(user),HttpStatus.OK);
     }
 
-    @DeleteMapping("/")
-    public ResponseEntity<UserDTO> deleteUser(@RequestBody UserDTO userDTO) {
-        userService.delete(userDTO.getId());
+    @DeleteMapping("/{id}")
+    public ResponseEntity<UserDTO> deleteUser(@PathVariable int id) {
+        userService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -62,7 +62,7 @@ public class UserController {
     public User login(@RequestBody UserDTO userDTO) {
 
         if (userService.loginUser(userDTO.name, userDTO.password)) {
-            String token = userService.createJWT(userDTO.name, 60000);
+            String token = UserService.createJWT(userDTO.name, 60000);
             User user = new User();
             user.setName(userDTO.name);
             user.setToken(token);

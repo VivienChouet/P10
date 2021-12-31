@@ -1,5 +1,6 @@
 package com.bibliotheque.API.Service;
 
+import com.bibliotheque.API.Entity.Dto.UserDTO;
 import com.bibliotheque.API.Entity.User;
 import com.bibliotheque.API.Repository.UserRepository;
 import com.bibliotheque.API.Utility.LoggingController;
@@ -34,72 +35,6 @@ public class UserService {
     PasswordEncoder passwordEncoder;
 
     /**
-     * Find All User
-     * @return List<User>
-     */
-    public List<User> findAll() {
-        logger.info("List User");
-        List<User> users = this.userRepository.findAll();
-        return users;
-    }
-
-    /**
-     * Find User By Id
-     * @param id
-     * @return User
-     */
-    public User findById(int id) {
-        logger.info("find UserId = " + id);
-        User user = this.userRepository.findById(id).get();
-        return user;
-    }
-
-    /**
-     * save
-     * @param user
-     */
-    public void save(User user) {
-        if(emailExists(user.email)) {
-            logger.info("new user = " + user.name);
-            System.out.println(emailExists(user.email));
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            userRepository.save(user);
-        }
-        else{
-            logger.warn("email exist");
-        }
-    }
-
-    /**
-     * Delete
-     * @param id
-     */
-    public void delete(int id) {
-        logger.info("delete User = " + id);
-        userRepository.delete(findById(id));
-    }
-
-    /**
-     * Loggin
-     * @param user
-     * @param password
-     * @return Boolean
-     */
-    public Boolean loginUser(String user, String password){
-        logger.info("check login in progress");
-        User user1 = userRepository.findByName(user);
-        if (passwordEncoder.matches(password, user1.getPassword()))
-        {
-            logger.info("Check login success");
-            return true;
-        }
-        logger.info("check login failed");
-        return false;
-    }
-
-
-    /**
-     *
      * @param username
      * @param ttlMillis
      * @return Bearer Token
@@ -143,20 +78,8 @@ public class UserService {
     }
 
     /**
-     * Find Username By Token
-     * @param token
-     * @return Username
-     */
-    public String findUsernameByToken (String token) {
-        String jwtToken = token.replace("Bearer ", "");
-        String username = decodeJWT(jwtToken).getSubject();
-
-        return username;
-
-    }
-
-    /**
      * decode JWT
+     *
      * @param jwt
      * @return claims
      */
@@ -171,19 +94,117 @@ public class UserService {
     }
 
     /**
+     * Find All User
+     *
+     * @return List<User>
+     */
+    public List<User> findAll() {
+        logger.info("List User");
+        List<User> users = this.userRepository.findAll();
+        return users;
+    }
+
+    /**
+     * Find User By Id
+     *
+     * @param id
+     * @return User
+     */
+    public User findById(int id) {
+        logger.info("find UserId = " + id);
+        User user = this.userRepository.findById(id);
+        return user;
+    }
+
+    /**
+     * save
+     *
+     * @param user
+     */
+    public void save(User user) {
+        if (emailExists(user.email)) {
+            logger.info("new user = " + user.name);
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            userRepository.save(user);
+        } else {
+            logger.warn("email exist");
+        }
+    }
+
+    /**
+     * Delete
+     *
+     * @param id
+     */
+    public void delete(int id) {
+        logger.info("delete User = " + id);
+        userRepository.delete(findById(id));
+    }
+
+    /**
+     * Loggin
+     *
+     * @param user
+     * @param password
+     * @return Boolean
+     */
+    public Boolean loginUser(String user, String password) {
+        logger.info("check login in progress");
+        User user1 = userRepository.findByName(user);
+        if (passwordEncoder.matches(password, user1.getPassword())) {
+            logger.info("Check login success");
+            return true;
+        }
+        logger.info("check login failed");
+        return false;
+    }
+
+    /**
+     * Find Username By Token
+     *
+     * @param token
+     * @return Username
+     */
+    public String findUsernameByToken(String token) {
+        String jwtToken = token.replace("Bearer ", "");
+        String username = decodeJWT(jwtToken).getSubject();
+
+        return username;
+
+    }
+
+    /**
      * Find User by Username
+     *
      * @param username
      * @return User
      */
     public User findByUsername(String username) {
-        logger.info("Find User By Username = " + username );
+        logger.info("Find User By Username = " + username);
         User user = userRepository.findByName(username);
         return user;
     }
 
-    public boolean emailExists(final String email)
-    {
+    public boolean emailExists(final String email) {
         logger.info("find if email exist");
-        return userRepository.findByEmail(email)== null;
+        return userRepository.findByEmail(email) == null;
+    }
+
+    public User update(int id, UserDTO userDTO) {
+        User user = this.findById(id);
+        if (userDTO.name != null) {
+            user.setName(userDTO.name);
+        }
+        if (userDTO.email != null) {
+            user.setEmail(userDTO.email);
+        }
+        if (userDTO.password != null) {
+            user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        }
+        userRepository.save(user);
+        String token = createJWT(user.name, 60000);
+        user.setToken(token);
+        logger.info("user : " + user.name + " mis a jour");
+        return user;
     }
 }

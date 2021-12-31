@@ -1,10 +1,13 @@
 package com.bibliotheque.API.Entity.Dto;
-
 import lombok.Data;
-
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Getter
+@Setter
 @Data
 public class AttenteDTO {
     public int id;

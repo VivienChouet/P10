@@ -52,4 +52,16 @@ public class AttenteController {
         List<Attente> attente =  this.attenteService.findByDate_mail();
         return new ResponseEntity(attenteMapper.toDto(attente), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity DeleteAttente(@PathVariable int id){
+        attenteService.deleteAttente(id);
+        return new ResponseEntity(HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping("/user/{id}")
+    public ResponseEntity AttenteUserById(@PathVariable int id){
+    Attente attente = attenteService.findByUserId(id);
+    return new ResponseEntity(attenteMapper.toDto(attente),HttpStatus.OK);
+    }
 }
