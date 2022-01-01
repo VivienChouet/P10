@@ -22,37 +22,69 @@
                                 <p class="card-text" th:text="*{book.author}"></p>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-sm-4" style="margin-top: 10px; margin-bottom: 10px">
+                        <div class="card text-center">
+                            <div class="card-header"><h3>Resumé</h3></div>
+                            <p class="card-text" th:text="*{book.resume}"></p>
                         </div>
-                        <div class="col-sm-4" style="margin-top: 10px; margin-bottom: 10px ">
-                            <div class="card text-center">
-                                <div class="card-header"><h3>Resumé</h3></div>
-                                <p class="card-text" th:text="*{book.resume}"></p>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
 
-
-<div class="row" th:each="edition01 : ${editions}" th:if="*{connected == true}">
-    <div class="container">
+<div class="container" style="display : flex ; justify-content: center; margin-top: 20px">
+    <div class="col-sm-4" th:each="exemplaire : ${exemplaires}" th:if="*{connected == true}"
+         style="margin-top: 5px;justify-content: center">
         <div class="card">
-            <div class="card-header" style="justify-content: center">
-               <h5>Edition : </h5><a th:text="*{edition01.name}"/>      <h5>Nombre d'exemplaire disponible : </h5><a th:text="*{edition01.number}"/>
-            </div>
-            <div card="card-panel">
-                <div class="col-2" style="justify-content: center">
-                    <form method="post" th:action="@{/reservation/edition}">
-                        <input aria-label="edition" class="form-control mr-sm-2" name="edition" placeholder="edition"
-                               th:value="${edition01.name}"
-                               type="hidden">
-                        <input aria-label="id" class="form-control mr-sm-2" name="id" placeholder="id"
-                               th:value="${book.id}"
-                               type="hidden">
-                        <button class="btn btn-primary btn-block btn-flat" type="submit">Reservation
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3> Edition : <p th:text="*{exemplaire.getEditionName()}"/></h3>
+                </div>
+                <div style="margin-top: 10px; margin-bottom: 10px "
+                     th:if="*{exemplaire.getNumberOfEditionAvailable() != 0}">
+                    <div class="card text-center">
+                        <div class="card-header"><h5>Nombre d'edition disponible :</h5></div>
+                        <p class="card-text" th:text="*{exemplaire.getNumberOfEditionAvailable()}"></p>
+                    </div>
+                    <div style="margin-top: 10px; margin-bottom: 10px ">
+                        <form method="post" th:action="@{/reservation/edition}">
+                            <input aria-label="edition" class="form-control mr-sm-2" name="edition"
+                                   placeholder="edition"
+                                   th:value="${exemplaire.edition_id}"
+                                   type="hidden">
+                            <button class="btn btn-primary btn-block btn-flat" type="submit">Reservation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; margin-bottom: 10px "
+                     th:if="*{exemplaire.getNumberOfEditionAvailable() == 0}">
+                    <div class="card text-center">
+                        <div class="card-header"><h5>Nombre d'attente possible : </h5></div>
+                        <p class="card-text" th:text="*{exemplaire.getAttenteAvailable()}"></p>
+                    </div>
+                    <div style="margin-top: 10px; margin-bottom: 10px "
+                         th:if="*{exemplaire.getAttenteAvailable() > 0 } ">
+                        <form method="post" th:action="@{/reservation/attente}">
+                            <input aria-label="edition" class="form-control mr-sm-2" name="edition"
+                                   placeholder="edition"
+                                   th:value="${exemplaire.edition_id}"
+                                   type="hidden">
+                            <button class="btn btn-primary btn-block btn-flat" type="submit">Attente
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div style="margin-top: 10px; margin-bottom: 10px " th:if="*{admin == true }">
+                    <div class="card text-center">
+                        <div class="card-header"><h5>Ajout d'un exemplaire :</h5></div>
+                    </div>
+                    <form method="post" th:action="@{/exemplaire/new/{id}(id=${exemplaire.getEdition_id()})}">
+                        <button class="btn btn-primary btn-block btn-flat" type="submit">Ajout d'un exemplaire
                         </button>
                     </form>
                 </div>
@@ -60,13 +92,15 @@
         </div>
     </div>
 </div>
-
-
-<div class="row" style="padding-top: 20px; justify-content: center; align-content: center">
-    <div class="form-group col-xs-offset-8 col-xs-4">
-        <a class="btn btn-primary btn-block btn-flat" role="button" th:href="@{/exemplaire/new/{id}(id=${book.id})}">Ajouter
-            une édition
-        </a>
+</div>
+<div class="container" th:if="*{admin == true }">
+    <div class="row" style="padding-top: 20px; justify-content: center; align-content: center">
+        <div class="form-group col-xs-offset-8 col-xs-4">
+            <a class="btn btn-primary btn-block btn-flat" role="button"
+               th:href="@{/edition/new/{id}(id=${book.id})}">Ajouter
+                une édition
+            </a>
+        </div>
     </div>
 </div>
 <footer th:insert="fragment/footer :: footer"></footer>

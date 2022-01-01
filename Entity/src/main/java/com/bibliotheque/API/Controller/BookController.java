@@ -2,8 +2,10 @@ package com.bibliotheque.API.Controller;
 
 import com.bibliotheque.API.Entity.Book;
 import com.bibliotheque.API.Entity.Dto.BookDTO;
+import com.bibliotheque.API.Entity.Dto.NewBookDTO;
 import com.bibliotheque.API.Entity.Mapper.BookMapper;
 import com.bibliotheque.API.Service.BookService;
+import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +21,6 @@ public class BookController {
 
     @Autowired
     BookService bookService;
-
     @Autowired
     BookMapper bookMapper;
 
@@ -43,14 +44,20 @@ public class BookController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<BookDTO> newBook(@RequestBody BookDTO bookDTO) {
-        bookService.save(bookMapper.toEntity(bookDTO));
+    public ResponseEntity<NewBookDTO> newBook(@RequestBody NewBookDTO newBookDTO) {
+        bookService.save(newBookDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/")
-    public ResponseEntity <BookDTO> updateBook(@RequestBody BookDTO bookDTO){
-        bookService.update(bookMapper.toEntity(bookDTO));
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Book> deleteBook(@PathVariable int id){
+        bookService.delete(id);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity <BookDTO> updateBook(@PathVariable int id,@RequestBody BookDTO bookDTO){
+        bookService.update(id,bookDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

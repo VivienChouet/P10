@@ -1,6 +1,9 @@
 package com.bibliotheque.API.Entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -18,6 +21,8 @@ public class User {
     public String password;
     private String token;
     private boolean admin;
+
+
 
 }
 

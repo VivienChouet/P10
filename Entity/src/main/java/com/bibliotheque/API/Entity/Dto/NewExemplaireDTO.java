@@ -1,14 +1,18 @@
 package com.bibliotheque.API.Entity.Dto;
 
+import com.bibliotheque.API.Entity.Edition;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class NewExemplaireDTO {
 
 
     private int id;
-    private String edition;
-    private int idBook;
+    private int edition;
+
 
 }
 

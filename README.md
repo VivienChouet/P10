@@ -30,3 +30,14 @@ Vous commencez par valider la marche à suivre auprès de votre responsable, Pat
     Patricia
 
 PS : On est toujours sur l’application web, on n’est pas encore sur les autres parties du projet (application mobile et application dédiée au personnel).
+
+## Livrables :
+
+Vous trouverez les livrables concernant les tests Postmann ainsi que les données de la BDD servant d'exemple dans le dossier divers.
+
+Afin de vous connecter les identifiants des différents utilisateur sont :
+
+- user 01 / user
+- user 02 / user
+- user 03 / user
+- Admin 01 / admin

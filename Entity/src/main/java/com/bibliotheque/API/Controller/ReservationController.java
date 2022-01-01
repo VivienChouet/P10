@@ -2,6 +2,8 @@ package com.bibliotheque.API.Controller;
 
 
 
+import com.bibliotheque.API.Entity.Dto.DeleteReservationDTO;
+import com.bibliotheque.API.Entity.Dto.ListReservationDTO;
 import com.bibliotheque.API.Entity.Dto.NewReservationDTO;
 import com.bibliotheque.API.Entity.Dto.ReservationDTO;
 import com.bibliotheque.API.Entity.Mapper.ReservationMapper;
@@ -25,9 +27,9 @@ public class ReservationController {
     ReservationMapper reservationMapper;
 
     @GetMapping("/")
-    public ResponseEntity<List<ReservationDTO>> listReservation (){
-        List<Reservation> reservations = this.reservationService.findAll();
-        return new ResponseEntity<>(reservationMapper.toDto(reservations), HttpStatus.OK);
+    public ResponseEntity<List<ListReservationDTO>> listReservation (){
+        List<ListReservationDTO> listReservations = this.reservationService.findAll();
+        return new ResponseEntity<>(listReservations, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -42,14 +44,13 @@ public class ReservationController {
 
     @PostMapping("/")
     public ResponseEntity<ReservationDTO> newReservation (@RequestBody NewReservationDTO newReservationDTO) {
-        System.out.println("reservation id => " + newReservationDTO.id);
+        System.out.println("New Reservation Controller UP");
         reservationService.save(newReservationDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PutMapping("/")
     public ResponseEntity<ReservationDTO> updateReservation (@RequestBody NewReservationDTO newReservationDTO) {
-
         if(newReservationDTO == null )
         {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -58,16 +59,16 @@ public class ReservationController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("/")
-    public ResponseEntity<ReservationDTO> deleteReservation (@RequestBody NewReservationDTO newReservationDTO){
-        reservationService.delete(newReservationDTO.getId());
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ReservationDTO> deleteReservation (@PathVariable int id){
+        reservationService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/myreservation")
-    public ResponseEntity<List<ReservationDTO>> reservationByUser (@RequestHeader("Authorization") String token){
-        List<Reservation> reservations = this.reservationService.findByUser(token);
-        return new ResponseEntity<>(reservationMapper.toDto(reservations), HttpStatus.OK);
+    public ResponseEntity<List<ListReservationDTO>> reservationByUser (@RequestHeader("Authorization") String token){
+        List<ListReservationDTO> listReservationDTO = this.reservationService.myReservation(token);
+        return new ResponseEntity<>(listReservationDTO, HttpStatus.OK);
     }
 
     @PostMapping("/extension/{id}")
@@ -82,7 +83,7 @@ if (reservation.extension){
     }
 
     @PostMapping("/return/{id}")
-    public ResponseEntity<ReservationDTO> endReservation (@PathVariable int id){
+    public ResponseEntity<ReservationDTO> endReservation (@PathVariable int id) throws Exception {
         reservationService.endReservation(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

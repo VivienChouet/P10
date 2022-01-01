@@ -20,15 +20,21 @@
                     </thread>
                     <tbody>
                     <tr th:each="reservation : ${reservations}">
-                        <td th:text="${reservation.user.name}"></td>
-                        <td th:text="${reservation.exemplaire.book.title}"></td>
-                        <td th:text="${reservation.exemplaire.edition}"></td>
-                        <td th:text="${reservation.date_fin}"></td>
-                        <td th:if="${reservation.exemplaire.available} == false">
-                            <form method="post" th:action="@{/admin/reservation/{id}(id=${reservation.id})}">
+                        <td th:text="${reservation.getUser().getName()}"></td>
+                        <td th:text="${reservation.getExemplaire().getEdition().getBook().getTitle()}"></td>
+                        <td th:text="${reservation.getExemplaire().getEdition().getName()}"></td>
+                        <td th:text="${reservation.getDate_fin()}"></td>
+                        <td th:if="${reservation.ended} == false and ${reservation.recuperer} == true">
+                            <form method="post" th:action="@{/admin/reservation/{id}(id=${reservation.getId()})}">
                                 <button class="btn btn-primary btn-block btn-flat" type="submit">livre rendu
                                 </button>
                             </form>
+                        </td>
+                        <td th:if="${reservation.ended} == true">
+                            <p>Reservation terminé</p>
+                        </td>
+                        <td th:if="${reservation.recuperer} == false">
+                            <p>Livre à récuperer</p>
                         </td>
                         </tr>
                     </tbody>

@@ -1,6 +1,5 @@
 package com.bibliotheque.Web.Controller;
 
-import com.bibliotheque.Web.Entity.Dto.NewExemplaireDTO;
 import com.bibliotheque.Web.service.ExemplaireService;
 import com.bibliotheque.Web.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -19,23 +18,10 @@ public class ExemplaireController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/new/{id}")
-    public String newExemplaire(@PathVariable int id,  Model model) throws JsonProcessingException {
-        NewExemplaireDTO newExemplaireDTO = new NewExemplaireDTO();
-        newExemplaireDTO.setIdBook(id);
-        model.addAttribute("exemplaire", newExemplaireDTO);
-        boolean connected = this.userService.connected();
-        boolean admin = this.userService.admin();
-        model.addAttribute("connected", connected);
-        model.addAttribute("admin", admin);
-        return "exemplaire/new";
-    }
+ @RequestMapping("/new/{id}")
+    public ModelAndView newExemplaire ( @PathVariable int id, Model model) throws JsonProcessingException {
 
- @PostMapping("/new/{id}")
-    public ModelAndView newExemplaire (@ModelAttribute NewExemplaireDTO newExemplaireDTO, @PathVariable int id, Model model) throws JsonProcessingException {
-        model.addAttribute("exemplaire", newExemplaireDTO);
-        newExemplaireDTO.setIdBook(id);
-        exemplaireService.save(newExemplaireDTO);
+        exemplaireService.save(id);
 
      return new ModelAndView("redirect:/");
     }

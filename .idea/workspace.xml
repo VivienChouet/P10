@@ -4,32 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="DEBUG : Lombok Does not work with IntelliJ EAP 2020.3">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" beforeDir="false" afterPath="$PROJECT_DIR$/# Log file name (for instance, `app.log`)" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/BookDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ExemplaireDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewExemplaireDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/NewReservationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/ReservationResearchDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Exemplaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/src/main/java/com/bibliotheque/API/Entity/User.java" afterDir="false" />
-    </list>
+    <list default="true" id="9c2fca0e-5584-48f8-b4a5-01fd008e8248" name="Default Changelist" comment="Préparation Soutenance" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JpaRepository" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="main" />
@@ -41,7 +31,47 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="34319149-a3dc-42c0-923b-7e12bc15303a" />
+        <option name="url" value="git@github.com:/VivienChouet/Projet_10.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1vtVPJDf2tjvHR9JrWs3NB9dnzt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -55,6 +85,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -62,22 +94,45 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Batch" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Entity/src/test/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Divers/SQL BDD" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.71821755" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bibliotheque.API.Entity" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Programation\Projet\Projet_10" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bibliotheque.API.Service" />
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.bibliotheque.API.Service" />
+      <recent name="com.bibliotheque.API.Entity.Dto" />
+      <recent name="com.bibliotheque" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -87,7 +142,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EntityApplication">
+  <component name="RunManager" selected="Spring Boot.BatchApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -99,27 +154,163 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ListReservationDTOTest.listReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bibliotheque.API.Entity.Dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bibliotheque.API.Entity.Dto" />
+      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.API.Entity.Dto.ListReservationDTOTest" />
+      <option name="METHOD_NAME" value="listReservationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationServiceTest.créationDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bibliotheque.API.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bibliotheque.API.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.API.Service.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="créationDTO" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationServiceTest.endReservationDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bibliotheque.API.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bibliotheque.API.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.API.Service.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="endReservationDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationServiceTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bibliotheque.API.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bibliotheque.API.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.API.Service.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationServiceTest.saveWithAttente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bibliotheque.API.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bibliotheque.API.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.API.Service.ReservationServiceTest" />
+      <option name="METHOD_NAME" value="saveWithAttente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.batch.BatchApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <envs>
+        <env name="echo &quot;export SENDGRID_API_KEY" value="'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'&quot; &gt; sendgrid.env echo &quot;sendgrid.env&quot; &gt;&gt; .gitignore source ./sendgrid.env" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="EntityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Entity" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.API.EntityApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <envs>
+        <env name="SENDGRID_API_KEY" value="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" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Web" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.Web.WebApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.ReservationServiceTest.créationDTO" />
+      <item itemvalue="JUnit.ReservationServiceTest.save" />
+      <item itemvalue="JUnit.ReservationServiceTest.saveWithAttente" />
+      <item itemvalue="JUnit.ReservationServiceTest.endReservationDate" />
+      <item itemvalue="JUnit.ListReservationDTOTest.listReservationTest" />
+      <item itemvalue="Spring Boot.BatchApplication" />
+      <item itemvalue="Spring Boot.EntityApplication" />
+      <item itemvalue="Spring Boot.WebApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ListReservationDTOTest.listReservationTest" />
+        <item itemvalue="JUnit.ReservationServiceTest.save" />
+        <item itemvalue="JUnit.ReservationServiceTest.saveWithAttente" />
+        <item itemvalue="JUnit.ReservationServiceTest.créationDTO" />
+        <item itemvalue="JUnit.ReservationServiceTest.endReservationDate" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SQLScriptSettings">
+    <option name="outputLayout" value="File per object by schema.groovy" />
+    <option name="outputPath" value="E:\Programation\Projet\Projet_10\Divers\SQL BDD" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -134,7 +325,87 @@
       <workItem from="1627382288858" duration="4508000" />
       <workItem from="1627386910477" duration="3272000" />
       <workItem from="1627397524897" duration="7692000" />
-      <workItem from="1627406413488" duration="313000" />
+      <workItem from="1627406413488" duration="1401000" />
+      <workItem from="1627733794127" duration="6102000" />
+      <workItem from="1627913183381" duration="7314000" />
+      <workItem from="1627994996879" duration="3683000" />
+      <workItem from="1628085506640" duration="8449000" />
+      <workItem from="1628157992065" duration="1968000" />
+      <workItem from="1628595604780" duration="3793000" />
+      <workItem from="1628864099658" duration="1335000" />
+      <workItem from="1629193978033" duration="1208000" />
+      <workItem from="1629287023273" duration="4282000" />
+      <workItem from="1629363993219" duration="5329000" />
+      <workItem from="1629552121724" duration="4240000" />
+      <workItem from="1629972712416" duration="3632000" />
+      <workItem from="1630072702668" duration="2613000" />
+      <workItem from="1630150400740" duration="9241000" />
+      <workItem from="1630163608191" duration="1212000" />
+      <workItem from="1630239113047" duration="1617000" />
+      <workItem from="1630330521764" duration="1154000" />
+      <workItem from="1630496892672" duration="9781000" />
+      <workItem from="1630577521661" duration="3638000" />
+      <workItem from="1630931198050" duration="3936000" />
+      <workItem from="1631091429929" duration="10996000" />
+      <workItem from="1631177532261" duration="6896000" />
+      <workItem from="1631277546443" duration="2466000" />
+      <workItem from="1631711789042" duration="9209000" />
+      <workItem from="1631886978941" duration="2368000" />
+      <workItem from="1631889429623" duration="5293000" />
+      <workItem from="1631971486610" duration="14562000" />
+      <workItem from="1632044785009" duration="5150000" />
+      <workItem from="1632231639823" duration="3217000" />
+      <workItem from="1632294923272" duration="9068000" />
+      <workItem from="1632742759185" duration="6083000" />
+      <workItem from="1632900071477" duration="6918000" />
+      <workItem from="1633359919936" duration="5680000" />
+      <workItem from="1633435527239" duration="2721000" />
+      <workItem from="1633517147165" duration="2405000" />
+      <workItem from="1633863833913" duration="1188000" />
+      <workItem from="1633953137825" duration="2542000" />
+      <workItem from="1634024718906" duration="10034000" />
+      <workItem from="1634111167162" duration="6283000" />
+      <workItem from="1634559991799" duration="7323000" />
+      <workItem from="1634654431485" duration="3759000" />
+      <workItem from="1634725322501" duration="4166000" />
+      <workItem from="1635167381227" duration="2870000" />
+      <workItem from="1635247762696" duration="2871000" />
+      <workItem from="1635322319798" duration="6502000" />
+      <workItem from="1635503022756" duration="6584000" />
+      <workItem from="1635771116865" duration="3432000" />
+      <workItem from="1635775674931" duration="387000" />
+      <workItem from="1635776153464" duration="6681000" />
+      <workItem from="1635858262050" duration="2882000" />
+      <workItem from="1635940555249" duration="3610000" />
+      <workItem from="1636377489315" duration="2944000" />
+      <workItem from="1636461797798" duration="6767000" />
+      <workItem from="1636545325919" duration="2290000" />
+      <workItem from="1636634102400" duration="4358000" />
+      <workItem from="1636983509548" duration="10362000" />
+      <workItem from="1637081097812" duration="2884000" />
+      <workItem from="1637149815355" duration="3219000" />
+      <workItem from="1637573159493" duration="3324000" />
+      <workItem from="1637576556695" duration="65000" />
+      <workItem from="1637576652139" duration="625000" />
+      <workItem from="1637578688800" duration="1710000" />
+      <workItem from="1637581662609" duration="310000" />
+      <workItem from="1637584898687" duration="1140000" />
+      <workItem from="1637754188025" duration="2635000" />
+      <workItem from="1638192845449" duration="4166000" />
+      <workItem from="1638359121538" duration="1052000" />
+      <workItem from="1638534505530" duration="3783000" />
+      <workItem from="1638625602502" duration="1370000" />
+      <workItem from="1638800303816" duration="4975000" />
+      <workItem from="1638882669634" duration="843000" />
+      <workItem from="1638959558126" duration="6848000" />
+      <workItem from="1639055208209" duration="615000" />
+      <workItem from="1639558420437" duration="6805000" />
+      <workItem from="1639750087045" duration="1748000" />
+      <workItem from="1639762836164" duration="608000" />
+      <workItem from="1639791167787" duration="1173000" />
+      <workItem from="1639820459703" duration="2896000" />
+      <workItem from="1640847784395" duration="1313000" />
+      <workItem from="1640993188622" duration="1531000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit / push">
       <created>1627383616785</created>
@@ -185,7 +456,84 @@
       <option name="project" value="LOCAL" />
       <updated>1627400645766</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="DEBUG : IntelliJ 2021.2 resolve problem with Lombok">
+      <created>1627407232988</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1627407232988</updated>
+    </task>
+    <task id="LOCAL-00009" summary="- Ajout de la methode permettant d'avoir la date du prochain retour.&#10;Bug de réservation : &#10;- Si il y a 2 ou plus d'exemplaires d'une même edition la reservation se fait uniquement sur la premiere entrée et cela ajoute plusieurs fois la même reservation d'un exemplairId unique.">
+      <created>1628086041905</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1628086041905</updated>
+    </task>
+    <task id="LOCAL-00010" summary="- Supression du Bug de reservation et traitement ramener sur le Back">
+      <created>1628093872493</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1628093872493</updated>
+    </task>
+    <task id="LOCAL-00011" summary="- Ajout des methode d'update du nombre d'exemplaire">
+      <created>1629364138955</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629364138955</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Refonte total des reservations et mise en place des attentes.">
+      <created>1630511775442</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1630511775442</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Refonte total des reservations et mise en place des attentes.">
+      <created>1632045512372</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1632045512372</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refonte total des reservations et mise en place des attentes.">
+      <created>1632749861743</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1632749861744</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Mise a jour">
+      <created>1633517495273</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1633517495273</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Mise en place d'une meilleur lisibilité des attentes et des reservations">
+      <created>1634114453596</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634114453596</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Préparation Soutenance">
+      <created>1640994074860</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1640994074860</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Préparation Soutenance">
+      <created>1640994406696</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1640994406696</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,13 +550,18 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="Reservation" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+        <entry key="f8673af3-922c-4f1d-88de-7691dfd9d8bf">
+          <value>
+            <State />
           </value>
         </entry>
       </map>
@@ -222,10 +575,31 @@
     </ignored-roots>
     <MESSAGE value="First Commit / push" />
     <MESSAGE value="DEBUG : Lombok Does not work with IntelliJ EAP 2020.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="DEBUG : Lombok Does not work with IntelliJ EAP 2020.3" />
+    <MESSAGE value="DEBUG : IntelliJ 2021.2 resolve problem with Lombok" />
+    <MESSAGE value="Mise en place de la classe Attente &#10;Ajout column number dans exemplaire" />
+    <MESSAGE value="- Ajout de la methode permettant d'avoir la date du prochain retour.&#10;Bug de réservation : &#10;- Si il y a 2 ou plus d'exemplaires d'une même edition la reservation se fait uniquement sur la premiere entrée et cela ajoute plusieurs fois la même reservation d'un exemplairId unique." />
+    <MESSAGE value="- Supression du Bug de reservation et traitement ramener sur le Back" />
+    <MESSAGE value="- Ajout des methode d'update du nombre d'exemplaire" />
+    <MESSAGE value="Refonte total des reservations et mise en place des attentes." />
+    <MESSAGE value="Mise a jour" />
+    <MESSAGE value="Mise en place d'une meilleur lisibilité des attentes et des reservations" />
+    <MESSAGE value="Finalisation des test" />
+    <MESSAGE value="Préparation Soutenance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Préparation Soutenance" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Projet_10$UserServiceTest_findById.ic" NAME="UserServiceTest.findById Coverage Results" MODIFIED="1636471600686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bibliotheque.API.Service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Projet_10$UserServiceTest_save.ic" NAME="UserServiceTest.save Coverage Results" MODIFIED="1636471588966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bibliotheque.API.Service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Projet_10$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1635942773327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bibliotheque.API.Service.*</FILTER>
+    </SUITE>
   </component>
 </project>

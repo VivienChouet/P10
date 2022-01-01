@@ -22,10 +22,10 @@ public class Processor implements ItemProcessor<ReservationDTO, ReservationDTO> 
             System.out.println("book = " + reservationDTO.getExemplaire().getBook().getTitle());
 */
             Email from = new Email("slaschh@gmail.com");
-            String subject = "Livre à retourner : " + reservationDTO.getExemplaire().getBook().getTitle();
+            String subject = "Livre à retourner : " + reservationDTO.getExemplaire().getEdition().getBook().getTitle();
             Email to = new Email(reservationDTO.getUser().getEmail());
             Content content = new Content("text/plain", "Bonjour Mr/Mme " + reservationDTO.getUser().getName() + ' ' + ",\n" +
-                    "Vous avez emprunté le livre : " + reservationDTO.getExemplaire().getBook().getTitle() + " édition  : " + reservationDTO.getExemplaire().getEdition() + ".\n" +
+                    "Vous avez emprunté le livre : " + reservationDTO.getExemplaire().getEdition().getBook().getTitle() + " édition  : " + reservationDTO.getExemplaire().getEdition() + ".\n" +
                     "Vous deviez le rendre le : " + reservationDTO.getDate_fin() + ".\n" +
                     "Merci de faire le necessaire pour le rendre dans les plus brefs délais.");
             Mail mail = new Mail(from, subject, to, content);

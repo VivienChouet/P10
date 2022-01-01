@@ -1,5 +1,6 @@
 package com.bibliotheque.batch.Service;
 
+import com.bibliotheque.batch.DTO.AttenteDTO;
 import com.bibliotheque.batch.DTO.ReservationDTO;
 import com.bibliotheque.batch.Utility.LoggingController;
 import org.slf4j.Logger;
@@ -13,6 +14,8 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.item.ItemReader;
+import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,7 +41,7 @@ public class BatchService {
     return  jobs.get("processJob")
             .incrementer(new RunIdIncrementer())
             .listener(listener())
-            .flow(step1())
+            .flow(step1()).next(step2())
             .end()
             .build();
 }
@@ -47,11 +50,21 @@ public class BatchService {
     Step step1 (){
     logger.info("Lauch step1");
     return steps.get("step1").<ReservationDTO, ReservationDTO>chunk(1)
-            .reader(new Reader())
+            .reader(new ReaderReservation())
             .processor(new Processor())
-            .writer(new Writer())
+            .writer(new WriterReservation())
             .build();
 }
+
+
+    @Bean
+    Step step2 (){
+        logger.info("Lauch step2");
+        return steps.get("step2").<AttenteDTO, AttenteDTO>chunk(1)
+                .reader(new ReaderAttente())
+                 .writer(new WriterAttente())
+                .build();
+    }
 
 @Bean
     JobExecutionListener listener(){

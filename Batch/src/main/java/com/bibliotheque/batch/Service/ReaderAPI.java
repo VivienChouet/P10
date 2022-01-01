@@ -1,5 +1,6 @@
 package com.bibliotheque.batch.Service;
 
+import com.bibliotheque.batch.DTO.AttenteDTO;
 import com.bibliotheque.batch.DTO.ReservationDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,7 +17,7 @@ public class ReaderAPI {
     public ReaderAPI() {
     }
 
-    public HttpResponse httpResponse() {
+    public HttpResponse batchRetard() {
         HttpClient httpClient = HttpClient.newBuilder().build();
         java.net.http.HttpRequest request = java.net.http.HttpRequest.newBuilder().uri(URI.create("http://localhost:8080/batch/")).GET().build();
         HttpResponse response = null;
@@ -38,4 +39,28 @@ public class ReaderAPI {
         return value;}
         return null;
     }
+
+    public HttpResponse batchAttente(){
+        HttpClient httpClient = HttpClient.newBuilder().build();
+        java.net.http.HttpRequest request = java.net.http.HttpRequest.newBuilder().uri(URI.create("http://localhost:8080/batch/attente")).GET().build();
+        HttpResponse response = null;
+        try {
+            response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    public List<AttenteDTO> attenteDTOS (HttpResponse response) throws JsonProcessingException {
+        var mapper = new ObjectMapper();
+        var mapCollectionType = mapper.getTypeFactory().constructCollectionType(List.class, AttenteDTO.class);
+        var json = response.body();
+        System.out.println(json);
+        if (json.toString() != ""){
+            List<AttenteDTO> value = mapper.readValue(String.valueOf(json), mapCollectionType);
+            return value;}
+        return null;
+    }
+
 }

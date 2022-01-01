@@ -1,8 +1,12 @@
 package com.bibliotheque.API.Controller;
 
+import com.bibliotheque.API.Entity.Attente;
+import com.bibliotheque.API.Entity.Dto.AttenteDTO;
 import com.bibliotheque.API.Entity.Dto.ReservationDTO;
+import com.bibliotheque.API.Entity.Mapper.AttenteMapper;
 import com.bibliotheque.API.Entity.Mapper.ReservationMapper;
 import com.bibliotheque.API.Entity.Reservation;
+import com.bibliotheque.API.Service.AttenteService;
 import com.bibliotheque.API.Service.BatchService;
 import com.bibliotheque.API.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +26,14 @@ public class BatchController {
 
     @Autowired
     BatchService batchService;
-
     @Autowired
     ReservationService reservationService;
-
     @Autowired
     ReservationMapper reservationMapper;
+    @Autowired
+    AttenteService attenteService;
+    @Autowired
+    AttenteMapper attenteMapper;
 
     @GetMapping("/")
     public ResponseEntity<List<ReservationDTO>> Batch() {
@@ -41,6 +47,18 @@ public class BatchController {
     public ResponseEntity<List<ReservationDTO>> BatchUpdate(@PathVariable int id) {
         Reservation reservation = this.reservationService.findById(id);
         batchService.update(reservation);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/attente")
+    public ResponseEntity<List<AttenteDTO>> BatchAttente (){
+        List<Attente> attentes = attenteService.attenteBatch();
+        return new ResponseEntity<>(attenteMapper.toDto(attentes), HttpStatus.OK);
+    }
+
+    @PostMapping("/attente/{id}")
+    public ResponseEntity<List<AttenteDTO>> BatchAttenteUpdate (@PathVariable int id) throws Exception {
+        attenteService.attenteNonRecuperer(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

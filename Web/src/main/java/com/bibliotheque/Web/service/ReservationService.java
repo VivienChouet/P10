@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.net.http.HttpResponse;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -27,39 +26,28 @@ public class ReservationService {
     /**
      *
      * @param edition
-     * @param bookId
      * @throws JsonProcessingException
      */
-    public void newReservation(String edition, Integer bookId) throws JsonProcessingException {
+    public void newReservation(int  edition) throws JsonProcessingException {
         UserDTO userDTO = userService.connectedUser();
-        System.out.println("edition reserver = " + edition);
-        System.out.println("bookid = " + bookId);
-        ReservationResearchDTO reservationResearchDTO = new ReservationResearchDTO();
-        reservationResearchDTO.setEdition(edition);
-        reservationResearchDTO.setId(bookId);
-        String json = (String) operateurDiamant.jsonConvert(reservationResearchDTO);
-        HttpResponse response = operateurDiamant.post("http://localhost:8080/exemplaire/edition", json);
-        List<ExemplaireDTO> exemplaireDTOS = (List<ExemplaireDTO>) operateurDiamant.listObject(response, ExemplaireDTO.class);
-        NewReservationDTO newreservationDTO = new NewReservationDTO();
-        int idUser = userDTO.getId();
-        newreservationDTO.setIduser(idUser);
-        newreservationDTO.setIdexemplaire(exemplaireDTOS.get(0).id);
-        newreservationDTO.setDate_debut(new Date());
-        newreservationDTO.setDate_fin(new Date());
-        String json1 = (String) operateurDiamant.jsonConvert(newreservationDTO);
-        operateurDiamant.post("http://localhost:8080/reservation/", json1);
-    }
+        NewReservationDTO newReservationDTO = new NewReservationDTO();
+        newReservationDTO.setEdition(edition);
+        newReservationDTO.setUser(userDTO.getId());
+        String json = (String) operateurDiamant.jsonConvert(newReservationDTO);
+        operateurDiamant.post("http://localhost:8080/reservation/", json);
+        logger.info("New Reservation :  " + newReservationDTO);
 
+    }
     /**
      * List Reservation By User
      * @return List<ReservationDTO>
      * @throws JsonProcessingException
      */
-    public List<ReservationDTO> reservationByUser() throws JsonProcessingException {
+    public List<ListReservationDTO> reservationByUser() throws JsonProcessingException {
         System.out.println("TOKEN = " + userService.token);
         HttpResponse response = operateurDiamant.RequestSecure("http://localhost:8080/reservation/myreservation", userService.token);
-        List<ReservationDTO> reservations = operateurDiamant.listObject(response, ReservationDTO.class);
-        return reservations;
+        List<ListReservationDTO> myReservationDTOS = operateurDiamant.listObject(response, ListReservationDTO.class);
+        return myReservationDTOS;
     }
 
     /**
@@ -79,7 +67,9 @@ public class ReservationService {
      * @param id
      */
     public void extension(int id){
-      operateurDiamant.post("http://localhost:8080/reservation/extension/" + id,"vide");
+
+        logger.info("extension reservation id : " + id);
+    operateurDiamant.post("http://localhost:8080/reservation/extension/" + id,"vide");
     }
 
     /**
@@ -95,10 +85,18 @@ public class ReservationService {
      * @return List<ReservationDTO>
      * @throws JsonProcessingException
      */
-    public List<ReservationDTO> listReservation() throws JsonProcessingException {
+    public List<ListReservationDTO> listReservation() throws JsonProcessingException {
         HttpResponse response = operateurDiamant.Request("http://localhost:8080/reservation/");
-        List<ReservationDTO> reservationDTOS = operateurDiamant.listObject(response, ReservationDTO.class);
-        return reservationDTOS;
+        List<ListReservationDTO> listReservationDTOS = operateurDiamant.listObject(response, ReservationDTO.class);
+        return listReservationDTOS;
     }
 
+    public void newAttente(int edition) throws JsonProcessingException {
+        UserDTO userDTO = userService.connectedUser();
+        NewAttenteDTO newAttenteDTO = new NewAttenteDTO();
+        newAttenteDTO.setEdition(edition);
+        newAttenteDTO.setUser(userDTO.getId());
+        String json = (String) operateurDiamant.jsonConvert(newAttenteDTO);
+        operateurDiamant.post("http://localhost:8080/attente/",json);
+    }
 }
